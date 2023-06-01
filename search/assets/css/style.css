@@ -1,0 +1,33 @@
+form {
+    padding: var(--main-padding);
+}
+
+form button {
+    padding: 20px 50px;
+    border: none;
+    background: var(--button-color-main);
+    color: white;
+    text-transform: uppercase;
+    border-radius: 50px;
+    font-weight: 700;
+}
+
+form #keyword {
+    margin-right: 10px;
+    padding: 20px 10px;
+    width: 500px;
+    /* font-size: 30px; */
+}
+
+h2 {
+    padding: 10px 240px;
+}
+
+.title-author-date {
+    padding: 10px 240px;
+    margin-bottom: 20px;
+}
+
+.title-author-date h1 {
+    font-size: 30px;
+}

@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: black;
+    color: white;
+    font-family: 'Inter', sans-serif;
+    width: 100%;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+button {
+    cursor: pointer;
+    outline: none;
+}
+
+input {
+    outline: none;
+}
+
+:root {
+    --main-padding: 50px 240px;
+    --button-color-main: #2495FD;
+}
+
+hr {
+    margin: 0 240px;
+}
+
+header {
+    padding: var(--main-padding);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+}
+
+nav .logo {
+    font-weight: 900;
+}
+
+nav .logo span {
+    font-weight: 100;
+}
+
+nav ul {
+    list-style: none;
+}
+
+nav ul li {
+    display: inline-block;
+    padding: 0px 20px;
+}
+
+nav ul li a {
+    font-size: 15px;
+    color: white;
+    text-decoration: none;
+}
+
+nav .search-menu {
+    cursor: pointer;
+}
+
+footer {
+    padding: var(--main-padding);
+    padding-top: 85px;
+    padding-bottom: 85px;
+    background: #27292B;
+    text-align: center;
+}
+
+footer .footer-logo {
+    font-weight: 900;
+    font-size: 15px;
+    line-height: 18px;
+    margin-bottom: 20px;
+}
+
+footer .footer-logo span {
+    font-weight: 400;
+}
+
+footer p {
+    text-align: center;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 21px;
+    letter-spacing: -0.231818px;
+    margin-bottom: 60px;
+    opacity: .5;
+}
+
+footer ul {
+    margin-bottom: 60px;
+}
+
+footer ul li{
+    display: inline-block;
+    padding: 0 30px;
+}
+
+footer .footer-socials i {
+    padding: 0 20px;
+}

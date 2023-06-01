@@ -1,0 +1,11 @@
+body {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(1, 100%);
+    place-items: center;
+}
+
+input, textarea {
+    display: block;
+}
+

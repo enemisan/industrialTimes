@@ -1,0 +1,80 @@
+.search-bar {
+    width: 100%;
+    position: absolute;
+    background: white;
+    top: 0;
+    padding: 5px 240px;
+    display: flex;
+    margin-bottom: 30px;
+    display: none;
+}
+
+.search-bar input {
+    padding: 10px;
+}
+
+.search-bar input[type=text] {
+    width: 80%;
+    margin: 0 10px 0 0;
+}
+
+.search-bar input[type=button] {
+    width: 20%;
+    border: none;
+    background: var(--button-color-main);
+    color: white;
+    text-transform: uppercase;
+    border-radius: 50px;
+    font-weight: 700;
+}
+
+header {
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.97) -0.69%, rgba(0, 0, 0, 0.2328) 100%), url("../images/landingPage-bg.png") no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.header-cnts {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.header-cnts p {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 15px;
+    color: #A2A2A2;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.header-cnts h1 {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 80px;
+    line-height: 100px;
+    width: 80%;
+    word-wrap: break-word;
+    color: #FFFFFF;
+    margin-bottom: 20px;
+}
+
+.header-cnts button {
+    border: none;
+    background: var(--button-color-main);
+    padding: 20px 65px;
+    border-radius: 75px;
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 18px;
+    text-transform: uppercase;
+    color: white;
+}
+
+
