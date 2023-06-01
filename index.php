@@ -100,6 +100,7 @@
                 </div>
             </a> -->
             <?php include "news-global/f-today-links.php" ?>
+            <p>Helllo</p>
         </div>
     </section>
 
