@@ -1,7 +1,7 @@
-<a href="news/_dimitris_kostianis.php">
+<a href="news/_manufacturers_association_of_nigeria.php">
                 <div class="t-image">
-                    <img src="news/assets/images/blog-image_25.jpg">
+                    <img src="news/assets/images/blog-image_37.jpg">
                 </div>
-                <h1>PZ Cussons Nigeria: Dimitris Kostianis Becomes CEO From June 1</h1>
-                <a href="news/_dimitris_kostianis.php"><button>Read More</button></a>
+                <h1>Dangote: Returning Nigeria Back To Oil Exporter</h1>
+                <a href="news/_manufacturers_association_of_nigeria.php"><button>Read More</button></a>
             </a>

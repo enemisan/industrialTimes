@@ -229,17 +229,43 @@ function addTodayContentDiv($imageFilename, $pageLink, $title)
     // Specify the maximum number of entries to keep
     $maxEntries = 6;
 
-    // Generate HTML content for the new entry
-    $html = '<a href="' . $pageLink . '" class="t-column-flex">
-                <h1>' . $title . '</h1>
-                <div>
-                    <img src="news/assets/images/' . $imageFilename . '" alt="">
-                </div>
-            </a>';
+    // Create a new DOMDocument
+    $dom = new DOMDocument();
+
+    // Create the <a> element
+    $aElement = $dom->createElement('a');
+    $aElement->setAttribute('href', $pageLink);
+    $aElement->setAttribute('class', 't-column-flex');
+
+    // Create the <h1> element
+    $h1Element = $dom->createElement('h1');
+    $h1Element->nodeValue = $title;
+
+    // Create the <div> element
+    $divElement = $dom->createElement('div');
+
+    // Create the <img> element
+    $imgElement = $dom->createElement('img');
+    $imgElement->setAttribute('src', 'news/assets/images/' . $imageFilename);
+    $imgElement->setAttribute('alt', '');
+
+    // Append the <img> element to the <div> element
+    $divElement->appendChild($imgElement);
+
+    // Append the <h1> and <div> elements to the <a> element
+    $aElement->appendChild($h1Element);
+    $aElement->appendChild($divElement);
+
+    // Append the <a> element to the document
+    $dom->appendChild($aElement);
+
+    // Convert the DOMDocument to HTML string
+    $html = $dom->saveHTML();
 
     // Retrieve existing entries if the file exists
     $filePath = "../news-global/f-today-links.php";
     $existingEntries = [];
+
     if (file_exists($filePath)) {
         $existingEntries = file($filePath, FILE_IGNORE_NEW_LINES);
     }
@@ -255,6 +281,8 @@ function addTodayContentDiv($imageFilename, $pageLink, $title)
     // Save the updated entries to the file
     file_put_contents($filePath, implode("\n", $existingEntries));
 }
+
+
 
 ?>
 
