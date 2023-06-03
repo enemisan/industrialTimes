@@ -8,6 +8,33 @@ if (!isset($_SESSION['user_id'])) {
     exit;
 }
 
+// Set the session timeout to 1 hour (60 minutes)
+$sessionTimeout = 60 * 60; // 1 hour
+
+// Check if the session variable storing the last activity time exists
+if (isset($_SESSION['last_activity'])) {
+    // Calculate the time difference between the current time and the last activity time
+    $elapsedTime = time() - $_SESSION['last_activity'];
+
+    // Check if the elapsed time exceeds the session timeout
+    if ($elapsedTime > $sessionTimeout) {
+        // Unset all session variables
+        $_SESSION = array();
+
+        // Destroy the session
+        session_destroy();
+
+        // Redirect the user to the login page
+        header("Location: ./");
+        exit;
+    }
+}
+
+// Update the last activity time in the session
+$_SESSION['last_activity'] = time();
+
+include "../conn/dbh.php";
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Get user inputs
     $image = $_FILES['image'];
@@ -21,6 +48,26 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (empty($image['name']) || empty($article) || empty($centralWords) || empty($author) || empty($title)) {
         echo 'Please fill in all the fields.';
         exit();
+    } else {
+        // Handle image upload
+        if (isset($_FILES['image']) && $_FILES['image']['error'] === UPLOAD_ERR_OK) {
+            $imageData = file_get_contents($_FILES['image']['tmp_name']);
+        } else {
+            echo "Error uploading image.";
+            return;
+        }
+
+        // Prepare and execute the query
+        $stmt = mysqli_prepare($conn, "INSERT INTO news (title, author, article, image, date) VALUES (?, ?, ?, ?, ?)");
+        mysqli_stmt_bind_param($stmt, "sssss", $title, $author, $article, $imageData, $currentDate);
+        if (mysqli_stmt_execute($stmt)) {
+            echo "Form data uploaded successfully.";
+        } else {
+            echo "Error uploading form data: " . mysqli_error($conn);
+        }
+
+        // Close the statement
+        mysqli_stmt_close($stmt);
     }
 
     // Generate a random page name from central words
@@ -130,9 +177,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Call the addContentDiv function
     $landingPageFileName = "news/" . strtolower(str_replace(' ', '_', $pageName)) . '.php';
     $existingPagePath = "../news-global/f-links.php"; // Replace with the path to your existing page
-    addContentDiv($existingPagePath, $imageName, $landingPageFileName, $title);
-    addLandingContentDiv($imageName, $landingPageFileName, $title);
-    addTodayContentDiv($imageName, $landingPageFileName, $title);
+    // addContentDiv($existingPagePath, $imageName, $landingPageFileName, $title);
+    // addLandingContentDiv($imageName, $landingPageFileName, $title);
+    // addTodayContentDiv($imageName, $landingPageFileName, $title);
 
     // Redirect the user to the newly created page
     header("Location: " . $fileName);
@@ -282,7 +329,8 @@ function addTodayContentDiv($imageFilename, $pageLink, $title)
     file_put_contents($filePath, implode("\n", $existingEntries));
 }
 
-
+// Close the connection
+mysqli_close($conn);
 
 ?>
 

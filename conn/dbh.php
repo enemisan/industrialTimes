@@ -38,7 +38,4 @@ mysqli_select_db($conn, "industrialtimes");
 //     echo "Error creating table: " . mysqli_error($conn);
 // }
 
-
-// Close the connection
-mysqli_close($conn);
 ?>
