@@ -23,20 +23,20 @@ if (!$conn) {
 // Switch to the database
 mysqli_select_db($conn, "industrialtimes");
 
-// Create the 'news' table
-$sql = "CREATE TABLE news (
-    id INT(11) AUTO_INCREMENT PRIMARY KEY,
-    title VARCHAR(255),
-    author VARCHAR(255),
-    article TEXT,
-    image LONGBLOB,
-    date DATE
-)";
-if (mysqli_query($conn, $sql)) {
-    echo "Table 'news' created successfully\n";
-} else {
-    echo "Error creating table: " . mysqli_error($conn);
-}
+// // Create the 'news' table
+// $sql = "CREATE TABLE news (
+//     id INT(11) AUTO_INCREMENT PRIMARY KEY,
+//     title VARCHAR(255),
+//     author VARCHAR(255),
+//     article TEXT,
+//     image LONGBLOB,
+//     date DATE
+// )";
+// if (mysqli_query($conn, $sql)) {
+//     echo "Table 'news' created successfully\n";
+// } else {
+//     echo "Error creating table: " . mysqli_error($conn);
+// }
 
 
 // Close the connection
