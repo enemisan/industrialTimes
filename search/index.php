@@ -12,17 +12,7 @@
             <a href = "../" class="logo">
                 Industrial<span>Times</span>
             </a>
-            <ul>
-                <li><a href="association/">Association</a></li>
-                <li><a href="#">Banks</a></li>
-                <li><a href="#">Companies</a></li>
-                <li><a href="#">Commerce</a></li>
-                <li><a href="#">Leaders</a></li>
-                <li><a href="#">Regulators</a></li>
-                <li><a href="#">Trade</a></li>
-                <li><a href="#">Technology</a></li>
-                <li><a href="#">Events</a></li>
-            </ul>
+            
             <a href="search/" class="search-menu" id="search">
                 <i class="fa fa-search" aria-hidden="true"></i>
             </a>

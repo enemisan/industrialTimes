@@ -22,7 +22,7 @@
             <a href = "./" class="logo">
                 Industrial<span>Times</span>
             </a>
-            <ul>
+            <!-- <ul>
                 <li><a href="../association/">Association</a></li>
                 <li><a href="#">Banks</a></li>
                 <li><a href="#">Companies</a></li>
@@ -32,7 +32,7 @@
                 <li><a href="#">Trade</a></li>
                 <li><a href="#">Technology</a></li>
                 <li><a href="#">Events</a></li>
-            </ul>
+            </ul> -->
             <a href="search/" class="search-menu" id="search">
                 <i class="fa fa-search" aria-hidden="true"></i>
             </a>
@@ -41,8 +41,7 @@
         <div class="header-cnts">
             <div>
                 <p>Latest Today</p>
-                <h1>Imported Used Vehicles Parts Undermining Nigeria's Automotive Industry</h1>
-                <a href="news/"><button>Read More</button></a>
+                <?php include "header.php" ?>
             </div>
         </div>
     </header>
@@ -92,7 +91,7 @@
                 <div>
                     <img src="" alt="">
                 </div>
-            </a>
+            </a>x
             <a href="news/" class="t-column-flex">
                 <h1>"LMN Manufacturing Company to Close Plant Due to Economic Downturn"</h1>
                 <div>
@@ -159,7 +158,9 @@
                 </div>
             </a>
         </div> -->
-        <?php include "news-global/f-links.php" ?>
+        <div id="content" class="content-div">
+            <?php include "news-global/f-links.php" ?>
+        </div>
     </section>
 
 

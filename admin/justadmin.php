@@ -58,105 +58,122 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // $imageName = getUniqueImageName('blog-image');
     // $uploadPath = '../news/assets/images/' . $imageName;
     // move_uploaded_file($image['tmp_name'], $uploadPath);
-
-    // Generate HTML page
-    $html = '<!DOCTYPE html>
-    <html lang="en">
+    // $uploadPath = '../news/assets/images/' . $image;
     
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="../assets/global/global.css">
-        <link rel="stylesheet" href="../assets/global/flex.css">
-        <link rel="stylesheet" href="assets/css/style.css">
-        <title>' . $pageName . '</title>
-        <style>
-            header {
-                background: linear-gradient(180deg, rgba(0, 0, 0, 0.6) 0%, rgb(0, 0, 0) 85%, rgb(0, 0, 0) 100%), url(   );
-                background-size: cover;
-                background-position: center;
-            }
-        </style>    
-    </head>
-    
-    <body>
-        <header>
-            <nav>
-                <a href="../" class="logo">
-                    Industrial<span>Times</span>
-                </a>
-                
-                <a href="../search/" class="search-menu" id="search">
-                    <i class="fa fa-search" aria-hidden="true"></i>
-                </a>
-            </nav>
-    
-            <div class="title-author-date">
-                <h1>' . $title . '</h1>
-                <div class="author-date">
-                    <p>' . $author . '</p>
-                    <div class="line"></div>
-                    <p class="date">' . $currentDate . '</p>
-                </div>
-            </div>
-        </header>
-    
-        <section class="post-ctn">
-            <p class="post">' . nl2br(htmlspecialchars($article)) . '</p>
-            <p class="share">Kindly share this story <span><i class="fa-brands fa-whatsapp"></i> <i class="fa-brands fa-facebook-f"></i><i class="fa-brands fa-twitter"></i> </span></p>
-            <p class="rights">All rights reserved. This material, and other digital content on this website, may not be reproduced, published, broadcast, rewritten or redistributed in whole or in part without prior express written permission from Industrial Times.</p>
-        </section>
-    
-        <footer>
-            <div class="footer-logo">
-                Industrial<span>Times</span>
-            </div>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita, laborum nihil.<br>Numquam quod illum
-                cumque molestias facere officiis commodi maiores!</p>
-            <ul>
-                <li><a href="../association/">Association</a></li>
-                <li><a href="#">Commerce</a></li>
-                <li><a href="#">Business</a></li>
-                <li><a href="#">Contacts</a></li>
-                <li><a href="../">Home</a></li>
-            </ul>
-            <div class="footer-socials">
-                <i class="fa fa-facebook" aria-hidden="true"></i>
-                <i class="fa fa-instagram" aria-hidden="true"></i>
-                <i class="fa fa-twitter" aria-hidden="true"></i>
-            </div>
-        </footer>
-    
-        <script src="https://kit.fontawesome.com/da98164faa.js" crossorigin="anonymous"></script>
-    </body>
-    
-    </html>';
-
-    // Save the generated HTML to a file
-    // Check if page name already exists and increment with index if necessary
-    $filePath = "../news/";
-    $index = 0;
-    $fileName = $filePath . strtolower(str_replace(' ', '_', $pageName)) . '.php';
-    while (file_exists($fileName)) {
-        $index++;
-        $fileName = $filePath . strtolower(str_replace(' ', '_', $pageName)) . '_' . $index . '.php';
-    }
-    file_put_contents($fileName, $html);
-
-    // Call the addContentDiv function
-    $landingPageFileName = "news/" . strtolower(str_replace(' ', '_', $pageName)) . '.php';
-    $existingPagePath = "../news-global/f-links.php"; // Replace with the path to your existing page
-    // addContentDiv($existingPagePath, $imageName, $landingPageFileName, $title);
-    // addLandingContentDiv($imageName, $landingPageFileName, $title);
-    // addTodayContentDiv($imageName, $landingPageFileName, $title);
-
-    $success = 0;
+    $imageTmpPath = $_FILES['image']['tmp_name'];
 
     if (!(empty($image['name']) || empty($article) || empty($centralWords) || empty($author) || empty($title))) {
         // Check if the file was uploaded without errors
         if (isset($_FILES["image"]) && $_FILES["image"]["error"] == 0) {
             $uploadImage = file_get_contents($_FILES["image"]["tmp_name"]);
+
+            // Get the file extension
+            $imageExtension = pathinfo($_FILES['image']['name'], PATHINFO_EXTENSION);
+
+            // Generate a unique name for the image
+            $imageName = uniqid() . '.' . $imageExtension;
+
+            // Specify the destination path for the image
+            $uploadPath = '../news/assets/images/' . $imageName;
+
+            // Move the temporary file to the destination path
+            move_uploaded_file($imageTmpPath, $uploadPath);
+            
+            // Generate HTML page
+            $html = '<!DOCTYPE html>
+            <html lang="en">
+            
+            <head>
+                <meta charset="UTF-8">
+                <meta http-equiv="X-UA-Compatible" content="IE=edge">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <link rel="stylesheet" href="../assets/global/global.css">
+                <link rel="stylesheet" href="../assets/global/flex.css">
+                <link rel="stylesheet" href="assets/css/style.css">
+                <title>' . $pageName . '</title>
+                <style>
+                    header {
+                        background: linear-gradient(180deg, rgba(0, 0, 0, 0.6) 0%, rgb(0, 0, 0) 85%, rgb(0, 0, 0) 100%), url(' .$uploadPath .');
+                        background-size: cover;
+                        background-position: center;
+                    }
+                </style>    
+            </head>
+            
+            <body>
+                <header>
+                    <nav>
+                        <a href="../" class="logo">
+                            Industrial<span>Times</span>
+                        </a>
+                        
+                        <a href="../search/" class="search-menu" id="search">
+                            <i class="fa fa-search" aria-hidden="true"></i>
+                        </a>
+                    </nav>
+            
+                    <div class="title-author-date">
+                        <h1>' . $title . '</h1>
+                        <div class="author-date">
+                            <p>' . $author . '</p>
+                            <div class="line"></div>
+                            <p class="date">' . $currentDate . '</p>
+                        </div>
+                    </div>
+                </header>
+            
+                <section class="post-ctn">
+                    <p class="post">' . nl2br(htmlspecialchars($article)) . '</p>
+                    <p class="share">Kindly share this story <span><i class="fa-brands fa-whatsapp" id="share-whatsapp"></i> <i
+                    class="fa-brands fa-facebook-f" id="share-facebook"></i><i class="fa-brands fa-twitter" id="share-twitter"></i> </span></p>
+                    <p class="rights">All rights reserved. This material, and other digital content on this website, may not be reproduced, published, broadcast, rewritten or redistributed in whole or in part without prior express written permission from Industrial Times.</p>
+                </section>
+            
+                <footer>
+                    <div class="footer-logo">
+                        Industrial<span>Times</span>
+                    </div>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita, laborum nihil.<br>Numquam quod illum
+                        cumque molestias facere officiis commodi maiores!</p>
+                    <ul>
+                        <li><a href="../association/">Association</a></li>
+                        <li><a href="#">Commerce</a></li>
+                        <li><a href="#">Business</a></li>
+                        <li><a href="#">Contacts</a></li>
+                        <li><a href="../">Home</a></li>
+                    </ul>
+                    <div class="footer-socials">
+                        <i class="fa fa-facebook" aria-hidden="true"></i>
+                        <i class="fa fa-instagram" aria-hidden="true"></i>
+                        <i class="fa fa-twitter" aria-hidden="true"></i>
+                    </div>
+                </footer>
+                
+                <script src="assets/js/share.js"></script>
+                <script src="https://kit.fontawesome.com/da98164faa.js" crossorigin="anonymous"></script>
+            </body>
+            
+            </html>';
+
+            // Save the generated HTML to a file
+            // Check if page name already exists and increment with index if necessary
+            $filePath = "../news/";
+            $index = 0;
+            $fileName = $filePath . strtolower(str_replace(' ', '_', $pageName)) . '.php';
+            while (file_exists($fileName)) {
+                $index++;
+                $fileName = $filePath . strtolower(str_replace(' ', '_', $pageName)) . '_' . $index . '.php';
+            }
+            file_put_contents($fileName, $html);
+
+            // Call the addContentDiv function
+            $landingPageFileName = "news/" . strtolower(str_replace(' ', '_', $pageName)) . '.php';
+            $existingPagePath = "../news-global/f-links.php"; // Replace with the path to your existing page
+            // addContentDiv($existingPagePath, $imageName, $landingPageFileName, $title);
+            // addLandingContentDiv($imageName, $landingPageFileName, $title);
+            // addTodayContentDiv($imageName, $landingPageFileName, $title);
+
+            $success = 0;
 
             // // Prepare the SQL statement
             // $stmt = mysqli_prepare($conn, "INSERT INTO news (image) VALUES (?)");
@@ -190,7 +207,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         if ($success == 1) {
             // Run the function to select data and write to file
-            selectDataAndWriteToFile($conn);
+            inputDataIntoSecondDiv($conn);
+            // Run the function to insert data into header
+            insertDataIntoHeader($conn);
+            // Run the function to generate today's links
+            generateTodayLinks($conn);
+            // Run the function to generate the links
+            generateLinks($conn);
             // Redirect the user to the newly created page
             header("Location: " . $fileName);
         }
@@ -229,123 +252,9 @@ function getUniqueImageName($prefix)
  * @param mixed $title
  * @return void
  */
-function addContentDiv($existingPagePath, $imageFilename, $pageLink, $title)
-{
-    $dom = new DOMDocument();
-    $dom->loadHTMLFile($existingPagePath);
-    $contentDivs = $dom->getElementById('content')->getElementsByTagName('a');
 
-    // Remove the first div if there are already four divs
-    if ($contentDivs->length >= 4) {
-        $firstDiv = $contentDivs->item(0);
-        $firstDiv->parentNode->removeChild($firstDiv);
-    }
-
-    // Create the new content div
-    $contentDiv = $dom->createElement('a');
-    $contentDiv->setAttribute('class', 't-column-flex');
-    $contentDiv->setAttribute('href', $pageLink);
-    $contentDiv->setAttribute('target', '_blank');
-
-    $h1 = $dom->createElement('h1', $title);
-    $contentDiv->appendChild($h1);
-
-    $imgDiv = $dom->createElement('div');
-    $contentDiv->appendChild($imgDiv);
-
-    $img = $dom->createElement('img');
-    $img->setAttribute('src', "news/assets/images/{$imageFilename}");
-    $img->setAttribute('alt', $title);
-    $imgDiv->appendChild($img);
-
-    // $a = $dom->createElement('a', $title);
-    // $a->setAttribute('href', $pageLink);
-    // $a->setAttribute('target', '_blank');
-    // $contentDiv->appendChild($a);
-
-    // Append the new content div to the existing divs
-    $dom->getElementById('content')->appendChild($contentDiv);
-
-    // Save the modified HTML back to the file
-    file_put_contents($existingPagePath, $dom->saveHTML());
-}
-
-function addLandingContentDiv($imageFilename, $pageLink, $title)
-{
-    // Generate HTML content for the new page
-    $html = '<a href="' . $pageLink . '">
-                <div class="t-image">
-                    <img src="news/assets/images/' . $imageFilename . '">
-                </div>
-                <h1>' . $title . '</h1>
-                <a href="' . $pageLink . '"><button>Read More</button></a>
-            </a>';
-
-    // Save the generated HTML to a file
-    $filePath = "../news-global/f-landing-links.php";
-    file_put_contents($filePath, $html);
-}
-
-function addTodayContentDiv($imageFilename, $pageLink, $title)
-{
-    // Specify the maximum number of entries to keep
-    $maxEntries = 6;
-
-    // Create a new DOMDocument
-    $dom = new DOMDocument();
-
-    // Create the <a> element
-    $aElement = $dom->createElement('a');
-    $aElement->setAttribute('href', $pageLink);
-    $aElement->setAttribute('class', 't-column-flex');
-
-    // Create the <h1> element
-    $h1Element = $dom->createElement('h1');
-    $h1Element->nodeValue = $title;
-
-    // Create the <div> element
-    $divElement = $dom->createElement('div');
-
-    // Create the <img> element
-    $imgElement = $dom->createElement('img');
-    $imgElement->setAttribute('src', 'news/assets/images/' . $imageFilename);
-    $imgElement->setAttribute('alt', '');
-
-    // Append the <img> element to the <div> element
-    $divElement->appendChild($imgElement);
-
-    // Append the <h1> and <div> elements to the <a> element
-    $aElement->appendChild($h1Element);
-    $aElement->appendChild($divElement);
-
-    // Append the <a> element to the document
-    $dom->appendChild($aElement);
-
-    // Convert the DOMDocument to HTML string
-    $html = $dom->saveHTML();
-
-    // Retrieve existing entries if the file exists
-    $filePath = "../news-global/f-today-links.php";
-    $existingEntries = [];
-
-    if (file_exists($filePath)) {
-        $existingEntries = file($filePath, FILE_IGNORE_NEW_LINES);
-    }
-
-    // Remove the earliest entry if the maximum number of entries is reached
-    if (count($existingEntries) >= $maxEntries) {
-        array_shift($existingEntries);
-    }
-
-    // Append the new entry to the existing entries
-    $existingEntries[] = $html;
-
-    // Save the updated entries to the file
-    file_put_contents($filePath, implode("\n", $existingEntries));
-}
-
-// Function to select data from 'news' table and write to external file
-function selectDataAndWriteToFile($conn)
+// Functions to select data from 'news' table and write to external file
+function inputDataIntoSecondDiv($conn)
 {
     // Select the data from the row with the second highest ID in the 'news' table
     $sql = "SELECT title, pagelink, image FROM news WHERE id = (SELECT MAX(id) FROM news WHERE id < (SELECT MAX(id) FROM news))";
@@ -360,6 +269,10 @@ function selectDataAndWriteToFile($conn)
         $pageLink = $row['pagelink'];
         $imageData = $row['image'];
 
+        // Truncate the title to the first 8 words
+        $truncatedTitle = implode(' ', array_slice(explode(' ', $title), 0, 8));
+        $displayTitle = $truncatedTitle . (str_word_count($title) > 8 ? '...' : '');
+
         // Convert image data to base64
         $imageBase64 = base64_encode($imageData);
         $imageSrc = 'data:image/jpeg;base64,' . $imageBase64;
@@ -369,7 +282,7 @@ function selectDataAndWriteToFile($conn)
             <div class="t-image">
                 <img src="' . $imageSrc . '">
             </div>
-            <h1>' . $title . '</h1>
+            <h1>' . $displayTitle . '</h1>
             <a href="' . $pageLink . '"><button>Read More</button></a>
         </a>';
 
@@ -382,6 +295,120 @@ function selectDataAndWriteToFile($conn)
         echo "No data found in the 'news' table.";
     }
 }
+
+function insertDataIntoHeader($conn) {
+    // Select the row with the highest ID
+    $sql = "SELECT title, pagelink, image FROM news ORDER BY id DESC LIMIT 1";
+    $result = mysqli_query($conn, $sql);
+
+    if ($result && mysqli_num_rows($result) > 0) {
+        // Fetch the row data
+        $row = mysqli_fetch_assoc($result);
+
+        // Extract the values
+        $title = $row['title'];
+        $pageLink = $row['pagelink'];
+
+        // Generate the HTML code
+        $html = '<h1>' . $title . '</h1>
+                <a href="' . $pageLink . '"><button>Read More</button></a>';
+
+        // Write the HTML code to the header.php file and overwrite its contents
+        $filePath = "../header.php";
+        file_put_contents($filePath, $html);
+
+        echo "Data inserted into header successfully.";
+    } else {
+        echo "No data found in the table.";
+    }
+}
+
+function generateTodayLinks($conn) {
+    // Select the six IDs starting from the third highest
+    $sql = "SELECT id, title, image, pagelink FROM news ORDER BY id DESC LIMIT 2, 6";
+    $result = mysqli_query($conn, $sql);
+
+    if ($result && mysqli_num_rows($result) > 0) {
+        // Generate the HTML code
+        $html = '';
+        while ($row = mysqli_fetch_assoc($result)) {
+            $title = $row['title'];
+            $imageData = $row['image'];
+            $pageLink = $row['pagelink'];
+
+            // Convert image data to base64
+            $imageBase64 = base64_encode($imageData);
+            $imageSrc = 'data:image/jpeg;base64,' . $imageBase64;
+
+            // Word wrap the title
+            $wrappedTitle = $title;
+            if (strlen($title) > 70) {
+                $wrappedTitle = substr($title, 0, 67) . '...';
+            }
+
+            $html .= '<a href="' . $pageLink . '" class="t-column-flex">
+                <h1>' . $wrappedTitle . '</h1>
+                <div>
+                    <img src="' . $imageSrc . '" alt="">
+                </div>
+            </a>';
+        }
+
+        // Write the HTML code to the external file
+        $filePath = "../news-global/f-today-links.php";
+        file_put_contents($filePath, $html);
+
+        echo "HTML code generated and written to file successfully.";
+    } else {
+        echo "No data found in the table.";
+    }
+}
+
+function generateLinks($conn) {
+    // Select the four IDs starting from the eighth highest
+    $sql = "SELECT id, title, image, pagelink FROM news ORDER BY id DESC LIMIT 7, 4";
+    $result = mysqli_query($conn, $sql);
+
+    if ($result && mysqli_num_rows($result) > 0) {
+        // Generate the HTML code
+        $html = '';
+        while ($row = mysqli_fetch_assoc($result)) {
+            $title = $row['title'];
+            $imageData = $row['image'];
+            $pageLink = $row['pagelink'];
+
+            // Convert image data to base64
+            $imageBase64 = base64_encode($imageData);
+            $imageSrc = 'data:image/jpeg;base64,' . $imageBase64;
+
+            // Word wrap the title
+            $wrappedTitle = $title;
+            if (strlen($title) > 62) {
+                $wrappedTitle = substr($title, 0, 59) . '...';
+            }
+
+            $html .= '<a class="t-column-flex" href="' . $pageLink . '" target="_blank">
+                <h1>' . $title . '</h1>
+                <div><img src="' . $imageSrc . '" alt="' . $wrappedTitle . '"></div>
+            </a>';
+        }
+
+        // Write the HTML code to the external file
+        $filePath = "../news-global/f-links.php";
+        file_put_contents($filePath, $html);
+
+        echo "HTML code generated and written to file successfully.";
+    } else {
+        echo "No data found in the table.";
+    }
+}
+
+
+
+
+
+
+
 
 
 
