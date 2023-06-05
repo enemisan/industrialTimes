@@ -71,10 +71,8 @@ Therefore, there is a need to address the identified root causes of inflation an
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita, laborum nihil.<br>Numquam quod illum
                         cumque molestias facere officiis commodi maiores!</p>
                     <ul>
-                        <li><a href="../association/">Association</a></li>
-                        <li><a href="#">Commerce</a></li>
-                        <li><a href="#">Business</a></li>
-                        <li><a href="#">Contacts</a></li>
+                        <li><a href="">About</a></li>
+                        <li><a href="#">Contact Us</a></li>
                         <li><a href="../">Home</a></li>
                     </ul>
                     <div class="footer-socials">

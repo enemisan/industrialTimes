@@ -115,3 +115,20 @@ footer ul li{
 footer .footer-socials i {
     padding: 0 20px;
 }
+
+
+
+/* iPad Media Query */
+@media only screen and (max-width: 1024px) {
+    :root {
+        --main-padding: 50px 40px; /* Adjusted padding for iPad */
+    }
+}
+
+
+/* Mobile Phone Media Query */
+@media only screen and (max-width: 767px) {
+    :root {
+        --main-padding: 30px; /* Adjusted padding for mobile phone */
+    }
+}

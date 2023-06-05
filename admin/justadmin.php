@@ -136,10 +136,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita, laborum nihil.<br>Numquam quod illum
                         cumque molestias facere officiis commodi maiores!</p>
                     <ul>
-                        <li><a href="../association/">Association</a></li>
-                        <li><a href="#">Commerce</a></li>
-                        <li><a href="#">Business</a></li>
-                        <li><a href="#">Contacts</a></li>
+                        <li><a href="">About</a></li>
+                        <li><a href="#">Contact Us</a></li>
                         <li><a href="../">Home</a></li>
                     </ul>
                     <div class="footer-socials">
@@ -214,6 +212,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             generateTodayLinks($conn);
             // Run the function to generate the links
             generateLinks($conn);
+            // Run the function to generate double links
+            generateDoubleLinks($conn); 
             // Redirect the user to the newly created page
             header("Location: " . $fileName);
         }
@@ -403,20 +403,48 @@ function generateLinks($conn) {
     }
 }
 
+function generateDoubleLinks($conn) {
+    // Select the two IDs starting from the twelfth highest
+    $sql = "SELECT id, title, pagelink, image FROM news ORDER BY id DESC LIMIT 2 OFFSET 11";
+    $result = mysqli_query($conn, $sql);
 
+    if ($result && mysqli_num_rows($result) > 0) {
+        // Generate the HTML code
+        $html = '';
+        while ($row = mysqli_fetch_assoc($result)) {
+            $title = $row['title'];
+            $pageLink = $row['pagelink'];
+            $image = $row['image'];
 
+            // Convert image data to base64
+            $imageBase64 = base64_encode($image);
+            $imageSrc = 'data:image/jpeg;base64,' . $imageBase64;
 
+            // Truncate title to 62 characters
+            if (strlen($title) > 62) {
+                $title = substr($title, 0, 62) . '...';
+            }
 
+            // Generate HTML code for each row
+            $html .= '<div class="t-flex t-row">
+                <a href="' . $pageLink . '">
+                    <div class="t-image">
+                        <img src="' . $imageSrc . '" alt="' . $title . '">
+                    </div>
+                    <h1>' . $title . '</h1>
+                </a>
+            </div>';
+        }
 
+        // Write the HTML code to the external file
+        $filePath = "../news-global/f-double-links.php";
+        file_put_contents($filePath, $html);
 
-
-
-
-
-
-
-
- 
+        echo "Data written to file successfully.";
+    } else {
+        echo "No data found in the 'news' table.";
+    }
+}
 
 // Close the connection
 mysqli_close($conn);

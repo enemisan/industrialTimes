@@ -51,53 +51,10 @@
     <section class="t-headline">
         <div class="t-flex t-row">
             <p class="t-hl">Today's Headline</p>
-            <!-- <a href="news/_national_agency_for_food_and_drugs_administration_and_control.php">
-                <div class="t-image">
-                    <img src="assets/images/1200px-NAFDAC_emblem.svg_.webp" alt="Headline Image">
-                </div>
-                <h1>NAFDAC Warns Against Taking Male Enhancement Capsules  PrimeZen Black 6000mg, 2000mg</h1>
-                <a href="news/_national_agency_for_food_and_drugs_administration_and_control.php"><button>Read More</button></a>
-            </a> -->
             <?php include "news-global/f-landing-links.php" ?>
         </div>
         <div class="t-flex t-column">
             <p class="t-hl">Today's Headline</p>
-            <!-- <a href="news/" class="t-column-flex">
-                <h1>Access Bank's Wigwe Becomes President of France -  Nigeria Business Council</h1>
-                <div>
-                    <img src="assets/images/access-bank.jpg" alt="">
-                </div>
-            </a>
-            <a href="news/" class="t-column-flex">
-                <h1>BoI Lures Micro, Small and Large Enterprises To SEZs For Better Funding</h1>
-                <div>
-                    <img src="assets/images/BOI-640x360.jpg" alt="">
-                </div>
-            </a>
-            <a href="news/" class="t-column-flex">
-                <h1>"LMN Manufacturing Company to Close Plant Due to Economic Downturn"</h1>
-                <div>
-                    <img src="" alt="">
-                </div>
-            </a>
-            <a href="news/" class="t-column-flex">
-                <h1>"LMN Manufacturing Company to Close Plant Due to Economic Downturn"</h1>
-                <div>
-                    <img src="" alt="">
-                </div>
-            </a>
-            <a href="news/" class="t-column-flex">
-                <h1>"LMN Manufacturing Company to Close Plant Due to Economic Downturn"</h1>
-                <div>
-                    <img src="" alt="">
-                </div>
-            </a>x
-            <a href="news/" class="t-column-flex">
-                <h1>"LMN Manufacturing Company to Close Plant Due to Economic Downturn"</h1>
-                <div>
-                    <img src="" alt="">
-                </div>
-            </a> -->
             <?php include "news-global/f-today-links.php" ?>
         </div>
     </section>
@@ -105,7 +62,7 @@
     <hr>
 
     <section class="t-feature">
-        <div class="t-flex t-row">
+        <!-- <div class="t-flex t-row">
             <a href="news/">
                 <div class="t-image">
                     <img src="assets/images/headline-img1.jpg" alt="Headline Image">
@@ -121,43 +78,14 @@
                 </div>
                 <h1>"ABC Industries Implements Sustainable Practices, Reduces Carbon Footprint by 30%"</h1>
             </a>
-        </div>
+        </div> -->
+        <?php include "news-global/f-double-links.php" ?>
     </section>
 
 
     <hr>
 
     <section class="t-mini-feature">
-        <!-- <div class="t-flex t-column">
-            <p class="t-hl">Featuring</p>
-            <a href="news/" class="t-column-flex">
-                <h1>"LMN Manufacturing Company to Close Plant Due to Economic Downturn"</h1>
-                <div>
-                    <img src="" alt="">
-                </div>
-            </a>
-            <a href="news/" class="t-column-flex">
-                <h1>"LMN Manufacturing Company to Close Plant Due to Economic Downturn"</h1>
-                <div>
-                    <img src="" alt="">
-                </div>
-            </a>
-        </div>
-        <div class="t-flex t-column">
-            <p class="t-hl">Featuring</p>
-            <a href="news/" class="t-column-flex">
-                <h1>"LMN Manufacturing Company to Close Plant Due to Economic Downturn"</h1>
-                <div>
-                    <img src="" alt="">
-                </div>
-            </a>
-            <a href="news/" class="t-column-flex">
-                <h1>"LMN Manufacturing Company to Close Plant Due to Economic Downturn"</h1>
-                <div>
-                    <img src="" alt="">
-                </div>
-            </a>
-        </div> -->
         <div id="content" class="content-div">
             <?php include "news-global/f-links.php" ?>
         </div>
