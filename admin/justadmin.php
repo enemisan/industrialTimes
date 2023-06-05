@@ -151,7 +151,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // addLandingContentDiv($imageName, $landingPageFileName, $title);
     // addTodayContentDiv($imageName, $landingPageFileName, $title);
 
-    $imageSuccess = 0;
+    $success = 0;
 
     if (!(empty($image['name']) || empty($article) || empty($centralWords) || empty($author) || empty($title))) {
         // Check if the file was uploaded without errors
@@ -175,6 +175,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             if (mysqli_stmt_execute($stmt)) {
                 echo "Form data uploaded successfully.";
+                $success = 1;
             } else {
                 echo "Error uploading form data: " . mysqli_error($conn);
             }
@@ -182,24 +183,22 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             // Close the statement
             mysqli_stmt_close($stmt);
 
-           
 
-
-            echo "Image uploaded successfully!";
         } else {
             echo "Error uploading image.";
         }
 
-        if ($imageSuccess == 1) {
-            
+        if ($success == 1) {
+            // Run the function to select data and write to file
+            selectDataAndWriteToFile($conn);
+            // Redirect the user to the newly created page
+            header("Location: " . $fileName);
         }
         
     }
 
 
-    // Redirect the user to the newly created page
-    // header("Location: " . $fileName);
-    // exit;
+    ;
 }
 
 // Function to generate a random page name from central words
@@ -348,8 +347,8 @@ function addTodayContentDiv($imageFilename, $pageLink, $title)
 // Function to select data from 'news' table and write to external file
 function selectDataAndWriteToFile($conn)
 {
-    // Select the data from the second row of the 'news' table
-    $sql = "SELECT title, pagelink, image FROM news LIMIT 1 OFFSET 1";
+    // Select the data from the row with the second highest ID in the 'news' table
+    $sql = "SELECT title, pagelink, image FROM news WHERE id = (SELECT MAX(id) FROM news WHERE id < (SELECT MAX(id) FROM news))";
     $result = mysqli_query($conn, $sql);
 
     if ($result && mysqli_num_rows($result) > 0) {
@@ -382,11 +381,12 @@ function selectDataAndWriteToFile($conn)
     } else {
         echo "No data found in the 'news' table.";
     }
-
 }
 
-// Select the second to last file ($conn) and overwrite the contents of ../news-global/f-landing-links.php
-selectDataAndWriteToFile($conn);
+
+
+
+
 
 
  
