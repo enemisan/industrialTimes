@@ -48,36 +48,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (empty($image['name']) || empty($article) || empty($centralWords) || empty($author) || empty($title)) {
         echo 'Please fill in all the fields.';
         exit();
-    } else {
-        // Handle image upload
-        if (isset($_FILES['image']) && $_FILES['image']['error'] === UPLOAD_ERR_OK) {
-            $imageData = file_get_contents($_FILES['image']['tmp_name']);
-        } else {
-            echo "Error uploading image.";
-            return;
-        }
-
-        // Prepare and execute the query
-        $stmt = mysqli_prepare($conn, "INSERT INTO news (title, author, article, image, date) VALUES (?, ?, ?, ?, ?)");
-        mysqli_stmt_bind_param($stmt, "sssss", $title, $author, $article, $imageData, $currentDate);
-        if (mysqli_stmt_execute($stmt)) {
-            echo "Form data uploaded successfully.";
-        } else {
-            echo "Error uploading form data: " . mysqli_error($conn);
-        }
-
-        // Close the statement
-        mysqli_stmt_close($stmt);
-    }
+    } 
 
     // Generate a random page name from central words
     $centralWords = explode(',', $centralWords);
     $pageName = getRandomPageName($centralWords);
 
     // Save the uploaded image with an incremented index
-    $imageName = getUniqueImageName('blog-image');
-    $uploadPath = '../news/assets/images/' . $imageName;
-    move_uploaded_file($image['tmp_name'], $uploadPath);
+    // $imageName = getUniqueImageName('blog-image');
+    // $uploadPath = '../news/assets/images/' . $imageName;
+    // move_uploaded_file($image['tmp_name'], $uploadPath);
 
     // Generate HTML page
     $html = '<!DOCTYPE html>
@@ -93,7 +73,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <title>' . $pageName . '</title>
         <style>
             header {
-                background: linear-gradient(180deg, rgba(0, 0, 0, 0.6) 0%, rgb(0, 0, 0) 85%, rgb(0, 0, 0) 100%), url(' . $uploadPath . ');
+                background: linear-gradient(180deg, rgba(0, 0, 0, 0.6) 0%, rgb(0, 0, 0) 85%, rgb(0, 0, 0) 100%), url(   );
                 background-size: cover;
                 background-position: center;
             }
@@ -106,18 +86,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <a href="../" class="logo">
                     Industrial<span>Times</span>
                 </a>
-                <ul>
-                    <li><a href="#">Association</a></li>
-                    <li><a href="#">Banks</a></li>
-                    <li><a href="#">Companies</a></li>
-                    <li><a href="#">Commerce</a></li>
-                    <li><a href="#">Leaders</a></li>
-                    <li><a href="#">Regulators</a></li>
-                    <li><a href="#">Trade</a></li>
-                    <li><a href="#">Technology</a></li>
-                    <li><a href="#">Events</a></li>
-                </ul>
-                <a href="search/" class="search-menu" id="search">
+                
+                <a href="../search/" class="search-menu" id="search">
                     <i class="fa fa-search" aria-hidden="true"></i>
                 </a>
             </nav>
@@ -181,9 +151,55 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // addLandingContentDiv($imageName, $landingPageFileName, $title);
     // addTodayContentDiv($imageName, $landingPageFileName, $title);
 
+    $imageSuccess = 0;
+
+    if (!(empty($image['name']) || empty($article) || empty($centralWords) || empty($author) || empty($title))) {
+        // Check if the file was uploaded without errors
+        if (isset($_FILES["image"]) && $_FILES["image"]["error"] == 0) {
+            $uploadImage = file_get_contents($_FILES["image"]["tmp_name"]);
+
+            // // Prepare the SQL statement
+            // $stmt = mysqli_prepare($conn, "INSERT INTO news (image) VALUES (?)");
+            // mysqli_stmt_bind_param($stmt, "s", $uploadImage);
+
+            // // Execute the statement
+            // if (mysqli_stmt_execute($stmt) === false) {
+            //     die("Error uploading image: " . mysqli_error($conn));
+            // } else {
+            //     $imageSuccess = 1;
+            // }
+
+            // Prepare and execute the query
+            $stmt = mysqli_prepare($conn, "INSERT INTO news (title, author, article, image, pagelink, date) VALUES (?, ?, ?, ?, ?, ?)");
+            mysqli_stmt_bind_param($stmt, "ssssss", $title, $author, $article, $uploadImage, $landingPageFileName, $currentDate);
+
+            if (mysqli_stmt_execute($stmt)) {
+                echo "Form data uploaded successfully.";
+            } else {
+                echo "Error uploading form data: " . mysqli_error($conn);
+            }
+
+            // Close the statement
+            mysqli_stmt_close($stmt);
+
+           
+
+
+            echo "Image uploaded successfully!";
+        } else {
+            echo "Error uploading image.";
+        }
+
+        if ($imageSuccess == 1) {
+            
+        }
+        
+    }
+
+
     // Redirect the user to the newly created page
-    header("Location: " . $fileName);
-    exit;
+    // header("Location: " . $fileName);
+    // exit;
 }
 
 // Function to generate a random page name from central words
@@ -329,6 +345,52 @@ function addTodayContentDiv($imageFilename, $pageLink, $title)
     file_put_contents($filePath, implode("\n", $existingEntries));
 }
 
+// Function to select data from 'news' table and write to external file
+function selectDataAndWriteToFile($conn)
+{
+    // Select the data from the second row of the 'news' table
+    $sql = "SELECT title, pagelink, image FROM news LIMIT 1 OFFSET 1";
+    $result = mysqli_query($conn, $sql);
+
+    if ($result && mysqli_num_rows($result) > 0) {
+        // Fetch the row data
+        $row = mysqli_fetch_assoc($result);
+
+        // Extract the values
+        $title = $row['title'];
+        $pageLink = $row['pagelink'];
+        $imageData = $row['image'];
+
+        // Convert image data to base64
+        $imageBase64 = base64_encode($imageData);
+        $imageSrc = 'data:image/jpeg;base64,' . $imageBase64;
+
+        // Generate the HTML code
+        $html = '<a href="' . $pageLink . '">
+            <div class="t-image">
+                <img src="' . $imageSrc . '">
+            </div>
+            <h1>' . $title . '</h1>
+            <a href="' . $pageLink . '"><button>Read More</button></a>
+        </a>';
+
+        // Write the HTML code to the external file and overwrite its contents
+        $filePath = "../news-global/f-landing-links.php";
+        file_put_contents($filePath, $html);
+
+        echo "Data written to file successfully.";
+    } else {
+        echo "No data found in the 'news' table.";
+    }
+
+}
+
+// Select the second to last file ($conn) and overwrite the contents of ../news-global/f-landing-links.php
+selectDataAndWriteToFile($conn);
+
+
+ 
+
 // Close the connection
 mysqli_close($conn);
 
@@ -346,7 +408,7 @@ mysqli_close($conn);
     <title>Create Page</title>
 </head>
 <body>
-    <form method="POST" enctype="multipart/form-data">
+    <form action="<?php htmlspecialchars($_SERVER['PHP_SELF']) ?>" method="POST" enctype="multipart/form-data">
         <label for="image" class="file-input">Image:</label>
         <input type="file" name="image" id="image" required>
 
@@ -362,8 +424,7 @@ mysqli_close($conn);
         <label for="title">Title:</label>
         <input type="text" name="title" id="title" required>
 
-        <button type="submit">Create Page</button>
-
+        <input type="submit" name="submit" value="Create Page">
         <a href="logout.php">logout</a>
     </form>
 

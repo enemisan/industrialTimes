@@ -37,5 +37,10 @@ mysqli_select_db($conn, "industrialtimes");
 // } else {
 //     echo "Error creating table: " . mysqli_error($conn);
 // }
-
+// $sql = "ALTER TABLE news ADD pagelink VARCHAR(255)";
+// if (mysqli_query($conn, $sql)) {
+//     echo "New column 'pagelink' added successfully\n";
+// } else {
+//     echo "Error adding new column: " . mysqli_error($conn);
+// }
 ?>
