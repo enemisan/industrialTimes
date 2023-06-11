@@ -14,9 +14,12 @@
         $username = $_POST['username'];
         $password = $_POST['password'];
 
-        if ($username === 'admin' && $password === 'password') {
+        if (($username === 'admin' or $username == 'adeolu') && $password === 'password') {
             // Authentication successful, store the user ID in the session
             $_SESSION['user_id'] = 1;
+
+            // Authentication successful, store the admin name in the session
+            $_SESSION['username'] = $username;
 
             // Redirect the user to the protected page
             header("Location: index.php");

@@ -5,7 +5,75 @@ body {
     place-items: center;
 }
 
-input, textarea {
-    display: block;
+header {
+    width: 100%;
 }
 
+header h1 {
+    text-align: center;
+    margin-top: 100px;
+    text-transform: capitalize;
+}
+
+
+form {
+    padding: 50px;
+    width: 50%;
+}
+
+input, textarea {
+    padding: 15px;
+    display: block;
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+textarea {
+    height: 60vh;
+}
+
+/* Styling for the label */
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+  
+/* Styling for the input[type="file"] */
+input[type="file"] {
+    /* Hide the default file input */
+    display: none;
+}
+
+/* Styling for the custom file input button */
+label.file-input::after {
+    content: "Browse";
+    display: inline-block;
+    padding: 8px 12px;
+    background-color: #2495FD;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: 15px;
+}
+
+input[type="submit"] {
+    background: none;
+    border: none;
+    color: white;
+    background: #2495FD;
+    font-size: 15px;
+    padding: 20px;
+}
+
+.logout {
+    text-align: center;
+    display: block;
+    width: 100%;
+    background: none;
+    border: none;
+    color: white;
+    background: #fd2424;
+    font-size: 15px;
+    padding: 20px;
+}

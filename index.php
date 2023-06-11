@@ -22,7 +22,7 @@
             <a href = "./" class="logo">
                 Industrial<span>Times</span>
             </a>
-            <!-- <ul>
+            <ul>
                 <li><a href="../association/">Association</a></li>
                 <li><a href="#">Banks</a></li>
                 <li><a href="#">Companies</a></li>
@@ -32,7 +32,7 @@
                 <li><a href="#">Trade</a></li>
                 <li><a href="#">Technology</a></li>
                 <li><a href="#">Events</a></li>
-            </ul> -->
+            </ul>
             <a href="search/" class="search-menu" id="search">
                 <i class="fa fa-search" aria-hidden="true"></i>
             </a>
@@ -59,28 +59,24 @@
         </div>
     </section>
 
+    <a href="#">
+        <div class="ad">
+            Advertise
+        </div>
+    </a>
+    
+
     <hr>
 
     <section class="t-feature">
-        <!-- <div class="t-flex t-row">
-            <a href="news/">
-                <div class="t-image">
-                    <img src="assets/images/headline-img1.jpg" alt="Headline Image">
-                </div>
-                <h1>"ABC Industries Implements Sustainable Practices, Reduces Carbon Footprint by 30%"</h1>
-            </a>
-        </div>
-
-        <div class="t-flex t-row">
-            <a href="news/">
-                <div class="t-image">
-                    <img src="assets/images/headline-img1.jpg" alt="Headline Image">
-                </div>
-                <h1>"ABC Industries Implements Sustainable Practices, Reduces Carbon Footprint by 30%"</h1>
-            </a>
-        </div> -->
         <?php include "news-global/f-double-links.php" ?>
     </section>
+
+    <a href="#">
+        <div class="ad">
+            Advertise
+        </div>
+    </a>
 
 
     <hr>

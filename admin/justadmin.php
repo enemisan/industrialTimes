@@ -8,6 +8,8 @@ if (!isset($_SESSION['user_id'])) {
     exit;
 }
 
+$adminName = $_SESSION['username'];
+
 // Set the session timeout to 1 hour (60 minutes)
 $sessionTimeout = 60 * 60; // 1 hour
 
@@ -453,6 +455,7 @@ mysqli_close($conn);
 
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -462,28 +465,43 @@ mysqli_close($conn);
     <link rel="stylesheet" href="assets/css/jadmin.css">
     <title>Create Page</title>
 </head>
+
 <body>
+    <header>
+        <nav>
+            <a href = "../" class="logo">
+                Industrial<span>Times</span>
+            </a>
+            <a href="search/" class="search-menu" id="search">
+                <i class="fa fa-search" aria-hidden="true"></i>
+            </a>
+        </nav>
+
+        <h1>Welcome <?php echo $adminName ?>, make your post</h1>
+    </header>
     <form action="<?php htmlspecialchars($_SERVER['PHP_SELF']) ?>" method="POST" enctype="multipart/form-data">
-        <label for="image" class="file-input">Image:</label>
+        <label for="image" class="file-input">Upload Cover Image Here:</label>
         <input type="file" name="image" id="image" required>
 
-        <label for="article">article:</label>
-        <textarea name="article" id="article" required></textarea>
+        <!-- <label for="title">Title:</label> -->
+        <input type="text" name="title" id="title" placeholder="Title" required>
 
-        <label for="central_words">Central Words (comma-separated):</label>
-        <input type="text" name="central_words" id="central_words" required>
+        <!-- <label for="central_words">Central Words (comma-separated):</label> -->
+        <input type="text" name="central_words" id="central_words" placeholder="Central Words (comma-separated):"
+            required>
 
-        <label for="author">Author:</label>
-        <input type="text" name="author" id="author" required>
+        <!-- <label for="author">Author:</label> -->
+        <input type="text" name="author" id="author" placeholder="Author" required>
 
-        <label for="title">Title:</label>
-        <input type="text" name="title" id="title" required>
+        <!-- <label for="article">article:</label> -->
+        <textarea name="article" id="article" placeholder="Write News here" required></textarea>
 
         <input type="submit" name="submit" value="Create Page">
-        <a href="logout.php">logout</a>
+        <a href="logout.php" class="logout">Log Out</a>
     </form>
 
 
-    
+    <script src="https://kit.fontawesome.com/da98164faa.js" crossorigin="anonymous"></script>
 </body>
+
 </html>
