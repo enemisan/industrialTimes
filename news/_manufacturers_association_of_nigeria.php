@@ -11,7 +11,7 @@
                 <title> Manufacturers Association of Nigeria</title>
                 <style>
                     header {
-                        background: linear-gradient(180deg, rgba(0, 0, 0, 0.6) 0%, rgb(0, 0, 0) 85%, rgb(0, 0, 0) 100%), url(../news/assets/images/647de6365bc9b.jpg);
+                        background: linear-gradient(180deg, rgba(0, 0, 0, 0.6) 0%, rgb(0, 0, 0) 85%, rgb(0, 0, 0) 100%), url(../news/assets/images/64868ab684b11.jpg);
                         background-size: cover;
                         background-position: center;
                     }
@@ -31,38 +31,40 @@
                     </nav>
             
                     <div class="title-author-date">
-                        <h1>MAN Calls For Collaboration Between CBN, MoF On Monetary, Fiscal Policy Matters</h1>
+                        <h1>MAN Says 10% Single Use Plastics Tax Is Against Green Environment Goals</h1>
                         <div class="author-date">
                             <p>Industrial Times</p>
                             <div class="line"></div>
-                            <p class="date">05 - 06 - 2023</p>
+                            <p class="date">12 - 06 - 2023</p>
                         </div>
                     </div>
                 </header>
             
                 <section class="post-ctn">
-                    <p class="post">The Manufacturers Association of Nigeria (MAN) has called on the Central Bank of Nigeria (CBN), and the Federal Ministry of Finance, Budget and National Planning, to collaborate to develop and implement non-contradictory and well-synthesized monetary and fiscal policy that support domestic manufacturing and the productive sectors in general.<br />
+                    <p class="post">The Manufacturers Association of Nigeria (MAN) has called on the Federal Government to reverse the Single Use Plastics tax of 10 percent slammed on companies in the sector as contained in the 2023 Fiscal policy guidelines .<br />
 <br />
-Segun Ajayi-Kadir, the Director-General of MAN, said that such collaboration will do good to the economy, bearing in mind that the Nigerian economy remains fragile and bedeviled with numerous challenges that inhibit growth.<br />
+This is to enable the country to meeting the climate change goals of green environment.<br />
 <br />
-Ajayi-Kadir was reacting to the CBN&#039;s Monetary Policy Rate (MPR) which raised to 18.5 percent in May 2023 from 18 percent<br />
+At a press briefing in Lagos, Wednesday, Otunba Francis Meshioye, President of the Manufacturers Association of Nigeria (MAN), said that the surcharge of 10 percent on Single Use Plastic under HS Code 3919.10.00.00 and 3919.90.00.00 as well as Headings - 39.20; 39.2, and 39.23 (Plastic Containers, Films and Bags), appears ill-timed and hasty in view of the fact that Government, through the Federal Ministry of Environment, is currently working towards instituting a Plastic Cycle Waste Management Policy with technical assistance from the United Nations Industrial Organisation (UNIDO) along with support from the Japanese government.<br />
 <br />
-He said that the MPR increase is the 7th in a trend and the inflation rate continues to rise despite the increases.<br />
+&quot; The project is to institute a long-term solution to manage the menace of plastic wastes and assist the affected industries to retrofit, thereby reaching the threshold of the United Nations goal of green environment as being espoused by the series of the UN organized Conference of Parties (COP).<br />
 <br />
-&quot; It is evident that the continuous and consistent increase in MPR is not yielding the desired growth in the economy.<br />
+&quot; It is therefore necessary that this process should be allowed to reach its conclusive end before other measures such as provisioned in the 2023 Fiscal policy guidelines are pronounced by Government,&quot; he said. <br />
 <br />
-The increase in MPR from 18% to 18.5% will certainly lead to an increase in lending rates and worsen the uncompetitiveness of the manufacturing sector.<br />
+A good example of this is the Food &amp; Beverage Recycling Alliance, approved by the federal government.<br />
 <br />
-The Association has been clamoring for single-digit lending rates to allow manufacturers access needed funds to boost the performance of the sector.<br />
-<br />
-This increase, like the previous ones, is evidence that the CBN is either unperturbed about the plight of the productive sector or is unable to fathom out a more creative policy mix that would reflate the sector.<br />
-<br />
-We are persuaded that monetary authority is oblivious of the fact that the failure of its tightening policy to address the inflationary pressure is because the hike in inflation is largely caused by a combination of familiar challenges, including low output which is attributed to instability of macroeconomic variables, inconsistent and lackluster fiscal policy regime, incoherent industrial policies, challenging and expensive operating environment, exploitative regulation, external shocks and poor exchange rate management.<br />
-<br />
-Therefore, there is a need to address the identified root causes of inflation and refrain from intensifying policy choices that hamper the performance of the real sectors of the economy.&quot;</p>
-                    <p class="share">Kindly share this story <span><i class="fa-brands fa-whatsapp"></i> <i class="fa-brands fa-facebook-f"></i><i class="fa-brands fa-twitter"></i> </span></p>
+&quot; Our primary concern is that it does not appear to have a<br />
+basis in law, as it is not provided for under the Customs, Excise, Tariff, etc (Consolidation) Act (CETA), unlike beverages and tobacco. The tax will also further fuel inflation and weaken consumer purchasing power, without achieving the desired climate change objectives,&quot; he said.</p>
+                    <p class="share">Kindly share this story <span><i class="fa-brands fa-whatsapp" id="share-whatsapp"></i> <i
+                    class="fa-brands fa-facebook-f" id="share-facebook"></i><i class="fa-brands fa-twitter" id="share-twitter"></i> </span></p>
                     <p class="rights">All rights reserved. This material, and other digital content on this website, may not be reproduced, published, broadcast, rewritten or redistributed in whole or in part without prior express written permission from Industrial Times.</p>
                 </section>
+
+                <a href="#" class="ad-link">
+                    <div class="ad">
+                        Advertise
+                    </div>
+                </a>
             
                 <footer>
                     <div class="footer-logo">
@@ -81,7 +83,8 @@ Therefore, there is a need to address the identified root causes of inflation an
                         <i class="fa fa-twitter" aria-hidden="true"></i>
                     </div>
                 </footer>
-            
+                
+                <script src="assets/js/share.js"></script>
                 <script src="https://kit.fontawesome.com/da98164faa.js" crossorigin="anonymous"></script>
             </body>
             

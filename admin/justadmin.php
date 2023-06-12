@@ -45,6 +45,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $author = $_POST['author'];
     $title = $_POST['title'];
     $currentDate = date("d - m - Y");
+    $category = strtolower($_POST["category"]);
 
     // Validate input fields
     if (empty($image['name']) || empty($article) || empty($centralWords) || empty($author) || empty($title)) {
@@ -130,6 +131,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     class="fa-brands fa-facebook-f" id="share-facebook"></i><i class="fa-brands fa-twitter" id="share-twitter"></i> </span></p>
                     <p class="rights">All rights reserved. This material, and other digital content on this website, may not be reproduced, published, broadcast, rewritten or redistributed in whole or in part without prior express written permission from Industrial Times.</p>
                 </section>
+
+                <a href="#" class="ad-link">
+                    <div class="ad">
+                        Advertise
+                    </div>
+                </a>
             
                 <footer>
                     <div class="footer-logo">
@@ -169,22 +176,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             // Call the addContentDiv function
             $landingPageFileName = "news/" . strtolower(str_replace(' ', '_', $pageName)) . '.php';
             $existingPagePath = "../news-global/f-links.php"; // Replace with the path to your existing page
-            // addContentDiv($existingPagePath, $imageName, $landingPageFileName, $title);
-            // addLandingContentDiv($imageName, $landingPageFileName, $title);
-            // addTodayContentDiv($imageName, $landingPageFileName, $title);
 
             $success = 0;
-
-            // // Prepare the SQL statement
-            // $stmt = mysqli_prepare($conn, "INSERT INTO news (image) VALUES (?)");
-            // mysqli_stmt_bind_param($stmt, "s", $uploadImage);
-
-            // // Execute the statement
-            // if (mysqli_stmt_execute($stmt) === false) {
-            //     die("Error uploading image: " . mysqli_error($conn));
-            // } else {
-            //     $imageSuccess = 1;
-            // }
 
             // Prepare and execute the query
             $stmt = mysqli_prepare($conn, "INSERT INTO news (title, author, article, image, pagelink, date) VALUES (?, ?, ?, ?, ?, ?)");
@@ -199,6 +192,28 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             // Close the statement
             mysqli_stmt_close($stmt);
+
+            $categoryOptions = array('association', 'banks', 'companies', 'commerce', 'leaders', 'regulators', 'trade', 'technology', 'events');
+
+            for ($i = 0; $i < count($categoryOptions); $i++) {
+                if ($category == $categoryOptions[$i]) {
+                    $stmt2 = mysqli_prepare($conn, "INSERT INTO $categoryOptions[$i] (title, author, article, image, pagelink, date) VALUES (?, ?, ?, ?, ?, ?)");
+                    mysqli_stmt_bind_param($stmt2, "ssssss", $title, $author, $article, $uploadImage, $landingPageFileName, $currentDate);
+
+                    if (mysqli_stmt_execute($stmt2)) {
+                        echo "<br> $categoryOptions[$i] data uploaded successfully. <br>";
+                        $success = 1;
+                    } else {
+                        echo "Error uploading form data: " . mysqli_error($conn);
+                    }
+                }
+            }
+
+            // Close the statement
+            mysqli_stmt_close($stmt2);
+
+
+            
 
 
         } else {
@@ -216,6 +231,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             generateLinks($conn);
             // Run the function to generate double links
             generateDoubleLinks($conn); 
+            collectCategoryData($conn);
             // Redirect the user to the newly created page
             header("Location: " . $fileName);
         }
@@ -296,6 +312,47 @@ function inputDataIntoSecondDiv($conn)
     } else {
         echo "No data found in the 'news' table.";
     }
+}
+
+function collectCategoryData($conn) {
+    $categoryOptions = array('association', 'banks', 'companies', 'commerce', 'leaders', 'regulators', 'trade', 'technology', 'events');
+
+    foreach ($categoryOptions as $category) {
+        // Fetch top 10 data from the table
+        $query = "SELECT image, title, pagelink FROM $category ORDER BY id DESC LIMIT 10";
+        $result = mysqli_query($conn, $query);
+
+        if ($result) {
+            // Create the HTML code for the fetched data
+            $htmlCode = '';
+            while ($row = mysqli_fetch_assoc($result)) {
+                $imageSrc = 'data:image/jpeg;base64,' . base64_encode($row['image']);
+                $title = $row['title'];
+                $pageLink = $row['pagelink'];
+
+                $htmlCode .= '<div class="t-flex t-row">
+                    <a href="' . $pageLink . '">
+                        <div class="t-image">
+                            <img src="' . $imageSrc . '" alt="' . $title . '">
+                        </div>
+                        <h1>' . $title . '</h1>
+                    </a>
+                </div>';
+            }
+
+            // Write the HTML code to the respective page file
+            $pageFile = '../categories/' . $category . '.php';
+            $fileContent = $htmlCode;
+            file_put_contents($pageFile, $fileContent);
+
+            echo "Data uploaded to ../categories/$pageFile successfully.<br>";
+        } else {
+            echo "Error fetching data from $category table: " . mysqli_error($conn) . "<br>";
+        }
+    }
+
+
+
 }
 
 function insertDataIntoHeader($conn) {
@@ -493,6 +550,23 @@ mysqli_close($conn);
         <!-- <label for="author">Author:</label> -->
         <input type="text" name="author" id="author" placeholder="Author" required>
 
+
+        <label for="mySelect" class="selectLabel">Category:</label>
+        <div class="custom-select">
+            <select name="category" id="category">
+                <option value="">Category</option>
+                <option value="Association">Association</option>
+                <option value="Banks">Bank</option>
+                <option value="Companies">Companies</option>
+                <option value="Commerce">Commerce</option>
+                <option value="Leaders">Leaders</option>
+                <option value="Regulators">Regulators</option>
+                <option value="Trade">Trade</option>
+                <option value="Technology">Technology</option>
+                <option value="Events">Events</option>
+            </select>
+        </div>
+
         <!-- <label for="article">article:</label> -->
         <textarea name="article" id="article" placeholder="Write News here" required></textarea>
 
@@ -501,6 +575,7 @@ mysqli_close($conn);
     </form>
 
 
+    <script src="assets/js/script.js"></script>
     <script src="https://kit.fontawesome.com/da98164faa.js" crossorigin="anonymous"></script>
 </body>
 

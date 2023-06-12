@@ -23,8 +23,8 @@
                 Industrial<span>Times</span>
             </a>
             <ul>
-                <li><a href="../association/">Association</a></li>
-                <li><a href="#">Banks</a></li>
+                <li><a href="association/">Association</a></li>
+                <li><a href="bank/">Banks</a></li>
                 <li><a href="#">Companies</a></li>
                 <li><a href="#">Commerce</a></li>
                 <li><a href="#">Leaders</a></li>
@@ -59,7 +59,7 @@
         </div>
     </section>
 
-    <a href="#">
+    <a href="#" class="ad-link">
         <div class="ad">
             Advertise
         </div>
@@ -72,7 +72,7 @@
         <?php include "news-global/f-double-links.php" ?>
     </section>
 
-    <a href="#">
+    <a href="#" class="ad-link">
         <div class="ad">
             Advertise
         </div>

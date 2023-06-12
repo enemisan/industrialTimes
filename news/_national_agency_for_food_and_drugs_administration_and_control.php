@@ -11,7 +11,7 @@
                 <title> National Agency for Food and Drugs Administration and Control</title>
                 <style>
                     header {
-                        background: linear-gradient(180deg, rgba(0, 0, 0, 0.6) 0%, rgb(0, 0, 0) 85%, rgb(0, 0, 0) 100%), url(../news/assets/images/647dfa41444b1.webp);
+                        background: linear-gradient(180deg, rgba(0, 0, 0, 0.6) 0%, rgb(0, 0, 0) 85%, rgb(0, 0, 0) 100%), url(../news/assets/images/648688f457e77.webp);
                         background-size: cover;
                         background-position: center;
                     }
@@ -31,11 +31,11 @@
                     </nav>
             
                     <div class="title-author-date">
-                        <h1>NAFDAC Warns Against Taking Male Enhancement Capsules PrimeZen Black 6000mg, 2000mg</h1>
+                        <h1>NAFDAC Warns Against Taking Male Enhancement Capsules  PrimeZen Black 6000mg, 2000mg</h1>
                         <div class="author-date">
                             <p>Industrial Times</p>
                             <div class="line"></div>
-                            <p class="date">05 - 06 - 2023</p>
+                            <p class="date">12 - 06 - 2023</p>
                         </div>
                     </div>
                 </header>
@@ -43,7 +43,7 @@
                 <section class="post-ctn">
                     <p class="post">THE National Agency for Food and Drugs Administration and Control (NAFDAC) has implores members of the public against taking male performance enhancement capsules PrimeZen Black 6000mg capsule alongside its 2000mg; to stop the sale or use, as well as handover the product to the nearest agency office.<br />
 <br />
-In a statement, NAFDAC Director-General, Prof. Mojisola Adeyeye,<br />
+In a statement,  NAFDAC Director-General, Prof. Mojisola Adeyeye,<br />
 said that the drugs manufactured by Volt Candy is being voluntarily recalled by the agency due to undeclared ingredients they were made of by their manufacturer in America.<br />
 <br />
 “The recall followed the analysis of Food and Drug Agency (FDA) of the United States of America, an FDA, which found the PrimeZen capsules to contain undeclared tadalafil and sildenafil.<br />
@@ -61,6 +61,12 @@ said that the drugs manufactured by Volt Candy is being voluntarily recalled by 
                     class="fa-brands fa-facebook-f" id="share-facebook"></i><i class="fa-brands fa-twitter" id="share-twitter"></i> </span></p>
                     <p class="rights">All rights reserved. This material, and other digital content on this website, may not be reproduced, published, broadcast, rewritten or redistributed in whole or in part without prior express written permission from Industrial Times.</p>
                 </section>
+
+                <a href="#" class="ad-link">
+                    <div class="ad">
+                        Advertise
+                    </div>
+                </a>
             
                 <footer>
                     <div class="footer-logo">

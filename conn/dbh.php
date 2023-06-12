@@ -71,7 +71,8 @@ foreach ($tables as $table) {
             author VARCHAR(255),
             article TEXT,
             image LONGBLOB,
-            date DATE
+            date DATE,
+            pagelink VARCHAR(255)
         )";
         if (mysqli_query($conn, $sql)) {
             echo "Table '$table' created successfully\n";
@@ -80,4 +81,23 @@ foreach ($tables as $table) {
         }
     }
 }
+
+    // // Define an array of table names
+    // $tables = array('association', 'bank', 'companies', 'commerce', 'leaders', 'regulators', 'trade', 'technology', 'events');
+
+    // // Loop through each table and delete if it exists
+    // foreach ($tables as $table) {
+    //     $result = mysqli_query($conn, "SHOW TABLES LIKE '$table'");
+    //     if (mysqli_num_rows($result) > 0) {
+    //         // Delete the table
+    //         $sql = "DROP TABLE $table";
+    //         if (mysqli_query($conn, $sql)) {
+    //             echo "Table '$table' deleted successfully\n";
+    //         } else {
+    //             echo "Error deleting table '$table': " . mysqli_error($conn);
+    //         }
+    //     } else {
+    //         echo "Table '$table' does not exist\n";
+    //     }
+    // }
 ?>

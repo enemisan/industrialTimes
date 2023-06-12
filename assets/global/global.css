@@ -118,11 +118,16 @@ footer .footer-socials i {
 
 
 .ad {
+    width: 100%;
     display: grid;
     place-items: center;
     font-size: 50px;
     height: 250px;
     background: grey;
+}
+
+.ad-link {
+    display: block;
     margin: var(--main-padding);
 }
 

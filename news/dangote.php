@@ -11,7 +11,7 @@
                 <title>dangote</title>
                 <style>
                     header {
-                        background: linear-gradient(180deg, rgba(0, 0, 0, 0.6) 0%, rgb(0, 0, 0) 85%, rgb(0, 0, 0) 100%), url(../news/assets/images/647ddf5fbbeee.jpeg);
+                        background: linear-gradient(180deg, rgba(0, 0, 0, 0.6) 0%, rgb(0, 0, 0) 85%, rgb(0, 0, 0) 100%), url(../news/assets/images/64868f0420a0d.jpg);
                         background-size: cover;
                         background-position: center;
                     }
@@ -31,50 +31,43 @@
                     </nav>
             
                     <div class="title-author-date">
-                        <h1>Dangote Oil Refinery To Supply 26,716 filling stations, 129 depots in Nigeria</h1>
+                        <h1>Dangote's Oil Refinery Raises Manufacturers Hope For Raw Materials</h1>
                         <div class="author-date">
                             <p>Industrial Times</p>
                             <div class="line"></div>
-                            <p class="date">05 - 06 - 2023</p>
+                            <p class="date">12 - 06 - 2023</p>
                         </div>
                     </div>
                 </header>
             
                 <section class="post-ctn">
-                    <p class="post">Dangote Petroleum Refinery will services 26,716 filling stations and 129 depots in Nigeria.<br />
+                    <p class="post">LAGOS  - (Industrial Times)<br />
+Operators in the manufacturing  and allied industries in Nigeria  have expressed  high expectations on the $19 billion Dangote Oil Refinery in Lagos, as its first production will start this month since construction started in 2016.<br />
 <br />
-Segun Ajayi-Kadir, the Director-General of the Manufacturers Association of Nigeria (MAN), gives this estimate ahead of the commissioning of the refinery by President Muhammadu Buhari, next week in Lagos.<br />
+Industrial Times learned that Nigerian outgoing President Muhammadu Buhari, will on May 22, open the 650,000 barrels-per-day refinery capacity , built by billionaire African industrialist Aliko Dangote.<br />
 <br />
-The refinery located at Ibeju-Lekki, Lagos, on land spanning approximately 2,635 hectares is said to be the World’s Largest Single Train 650,000 barrels per day Petroleum Refinery with a 9000 KTPA Polypropylene Plant ever built.<br />
+The privately owned oil refinery is expected to end the country&#039;s reliance on imported refined petroleum products, and also closes  the gap in the local sourcing of  raw materials for industries and curtail the demand for foreign exchange.<br />
 <br />
-&quot; For all the determination and trail blazing zeal to bring this dream into reality, MAN Congratulate the President/CEO of Dangote Group, Alhaji Aliko Dangote, on the completion and the official commissioning of this pride-of-Africa birthed-in-Nigeria project,&#039;&#039; said Ajayi-Kadir.<br />
+Earlier, Alhaji Aliko Dangote, had in his visions for the country’s industrial sector overthe next ten years, said &quot;More than 50 percent of production inputs are imported into the country &#039;<br />
+This reduces the competitiveness of the nation and seems to suggest our non-readiness as a nation to promote industrial beneficial industrial activities.<br />
+It is imperative that we invest and resuscitate the primary input suppliers like our national refineries, Iron and steel complexes, paper Mills, etc, and formulate policies to encourage forward and backward linkages  to curtail imports and demand for forex.&quot;<br />
+With the coming on stream of the Dangote Oil Refinery,  the Director General, Lagos Chamber Of Commerce &amp; Industry, Dr. Chinyere Almona, said, “LCCI views the Refinery’s impact on the Nigerian economy as significant.<br />
 <br />
-He said that the coming onboard of the Dangote Refinery promises to bring to pleasant end, the nightmare of long queues at petrol filling station and the disruption of social and economic activities that come with it.<br />
+The Chamber expects the Refinery to fuel the  growth and development across its value chain, including cosmetics, plastics, textiles, etc.<br />
 <br />
-Features of Dangote Refinery<br />
-▪︎The Refinery can meet 100% of Nigeria’s requirement for all refined products (Gasoline, 57 million litres per day; Diesel, 27 million litres per day; Kerosene, 11 million litres per day and Aviation Jet, 9 million litres per day) and also have a surplus of each of these products for export.<br />
+We also see room for the development of added value in agribusiness, including the Sugar Backward Integration projects that plan to create a strong localized supply in the sugar industry, benefiting local suppliers across the sugar value chain.<br />
 <br />
-▪︎The Refinery when fully operational is expected to generate $10 Billion from the export of refined petroleum products and save Nigeria an estimated $10 Billion in foreign exchange.<br />
-<br />
-▪︎With State-of-the-art technology, the refinery is designed to produce with 100% Nigerian Crude with the flexibility to process other crudes from Africa, Middle East, and US Light Oil.<br />
-<br />
-▪︎It has a Self-sufficient Marine facility with the ability for freight optimization.<br />
-<br />
-▪︎With the Largest Single order of 5 SPMs anywhere in the world, Diesel &amp; Gasoline Products from the refinery will conform to Euro V Specifications.<br />
-<br />
-▪︎The refinery design complies with the World Bank, US EPA, European emission standards, and the Department of Petroleum Resources (DPR) emission/effluent standards.<br />
-<br />
-▪︎To cushion the potential impact of increase in mean sea level due to global warming, the company took appropriate measures using the world’s largest, 2nd and 10th largest dredgers to elevate the sea height by 1.5 metres.<br />
-<br />
-▪︎Dangote Group is one of the few companies in the world executing a Petroleum Refinery and a Petrochemical complex directly as an Engineering, Procurement, and Construction (EPC) Contractor.<br />
-Globally, apart from three companies, no individual owner has done the complete EPC Contract for a Petroleum Refinery<br />
-<br />
-▪︎On employment, the Refinery offers the highest number of employees by any private company, including 100,000 indirect employments at retail outlets.<br />
-<br />
-▪︎Quite interestingly, the16,000 trucks for transport will create additional jobs and, in the process, the company has trained over 400 artisans selected from host communities in the areas of Masonry, Carpentry, AC Electricians, Plumbing, Welders, Iron-benders and Auto Mechanics.</p>
-                    <p class="share">Kindly share this story <span><i class="fa-brands fa-whatsapp"></i> <i class="fa-brands fa-facebook-f"></i><i class="fa-brands fa-twitter"></i> </span></p>
+&quot; Further, iIt will save and generate foreign exchange. The Refinery will create jobs, positively affect the value of the Naira, broaden prosperity for the downstream sector, and provide growth opportunities for businesses.”</p>
+                    <p class="share">Kindly share this story <span><i class="fa-brands fa-whatsapp" id="share-whatsapp"></i> <i
+                    class="fa-brands fa-facebook-f" id="share-facebook"></i><i class="fa-brands fa-twitter" id="share-twitter"></i> </span></p>
                     <p class="rights">All rights reserved. This material, and other digital content on this website, may not be reproduced, published, broadcast, rewritten or redistributed in whole or in part without prior express written permission from Industrial Times.</p>
                 </section>
+
+                <a href="#" class="ad-link">
+                    <div class="ad">
+                        Advertise
+                    </div>
+                </a>
             
                 <footer>
                     <div class="footer-logo">
@@ -93,7 +86,8 @@ Globally, apart from three companies, no individual owner has done the complete 
                         <i class="fa fa-twitter" aria-hidden="true"></i>
                     </div>
                 </footer>
-            
+                
+                <script src="assets/js/share.js"></script>
                 <script src="https://kit.fontawesome.com/da98164faa.js" crossorigin="anonymous"></script>
             </body>
             

@@ -11,7 +11,7 @@
                 <title>unilever</title>
                 <style>
                     header {
-                        background: linear-gradient(180deg, rgba(0, 0, 0, 0.6) 0%, rgb(0, 0, 0) 85%, rgb(0, 0, 0) 100%), url(../news/assets/images/647e0398e005f.jpg);
+                        background: linear-gradient(180deg, rgba(0, 0, 0, 0.6) 0%, rgb(0, 0, 0) 85%, rgb(0, 0, 0) 100%), url(../news/assets/images/64868f2e710d7.jpg);
                         background-size: cover;
                         background-position: center;
                     }
@@ -31,11 +31,11 @@
                     </nav>
             
                     <div class="title-author-date">
-                        <h1>100 Years of Unilever In Nigeria (1923 - 2023)</h1>
+                        <h1>100 Years of  Unilever In Nigeria (1923 - 2023)</h1>
                         <div class="author-date">
                             <p>Industrial Times</p>
                             <div class="line"></div>
-                            <p class="date">05 - 06 - 2023</p>
+                            <p class="date">12 - 06 - 2023</p>
                         </div>
                     </div>
                 </header>
@@ -46,9 +46,9 @@ His vision of making products that solve environmental challenges was evident wh
 <br />
 This milestone helped the Lever Brothers to become the first company to popularize cleanliness in Victorian England.<br />
 <br />
-In Nigeria, Unilever’s history dates back to 1923 when Robert Hesketh Leverhulme opened a trading post in Nigeria under the business name, Lever Brothers (West Africa) Ltd.<br />
+In Nigeria, Unilever’s history  dates back to 1923 when Robert Hesketh Leverhulme opened a trading post in Nigeria under the business name, Lever Brothers (West Africa) Ltd.<br />
 <br />
-The firm was primarily engaged in trading of soap and in 1924, the name was changed to West African Soap Company.<br />
+The firm was primarily engaged in trading of soap and in 1924, the name was changed to West African Soap Company. <br />
 Sensing opportunity in the country, the firm opened a soap factory in Apapa in 1925.<br />
 <br />
 The company later expanded into the production of food products, it opened a new soap factory in Aba in 1958 and changed its name to Lever Brothers Nigeria Limited in 1955.<br />
@@ -69,10 +69,10 @@ The merger gave Unilever control of the newly merged entity, this was the first 
 <br />
 In 2001, the company changed its name to Unilever Nigeria Plc.<br />
 <br />
-As the company celebrates its centenary in Nigeria, what should Nigerians look forward<br />
+As the company celebrates its  centenary in Nigeria, what should Nigerians look forward<br />
 to from the company?<br />
 <br />
-Carl Cruz, the former Managing Director of Unilever Nigeria Plc , gave this insights , recently, ( before he left to Airtel Africa Group as MD/CEO).<br />
+Carl Cruz, the former  Managing Director of Unilever Nigeria Plc , gave this insights , recently, ( before he left to Airtel Africa Group as MD/CEO).<br />
 <br />
 &quot; The intent is to be here in the next 100 years and beyond. After being here for a century, Nigerians can expect a better and stronger, Unilever as an organization.<br />
 We want to increase our relevance to Nigerian consumers by continuing to offer established products in a refreshed way and bringing in a diverse set of portfolios from other markets that will be genuinely relevant to making the lives of Nigerians much better in the next 100 years and more &quot;, he said .</p>
@@ -80,6 +80,12 @@ We want to increase our relevance to Nigerian consumers by continuing to offer e
                     class="fa-brands fa-facebook-f" id="share-facebook"></i><i class="fa-brands fa-twitter" id="share-twitter"></i> </span></p>
                     <p class="rights">All rights reserved. This material, and other digital content on this website, may not be reproduced, published, broadcast, rewritten or redistributed in whole or in part without prior express written permission from Industrial Times.</p>
                 </section>
+
+                <a href="#" class="ad-link">
+                    <div class="ad">
+                        Advertise
+                    </div>
+                </a>
             
                 <footer>
                     <div class="footer-logo">
