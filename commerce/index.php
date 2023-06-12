@@ -18,8 +18,8 @@
             <ul>
                 <li><a href="../association">Association</a></li>
                 <li><a href="../bank">Banks</a></li>
-                <li><a href="#">Companies</a></li>
-                <li><a href="../commerce">Commerce</a></li>
+                <li><a href="../companies">Companies</a></li>
+                <li><a href="#">Commerce</a></li>
                 <li><a href="../leaders">Leaders</a></li>
                 <li><a href="../regulators">Regulators</a></li>
                 <li><a href="../trade">Trade</a></li>
@@ -31,11 +31,11 @@
             </div>
         </nav>
 
-        <h2>Companies</h2>
+        <h2>Commerce</h2>
     </header>
 
     <section class="t-feature">
-        <?php include "../categories/companies.php" ?>
+        <?php include "../categories/commerce.php" ?>
     </section>
 
     <footer>

@@ -19,12 +19,12 @@
                 <li><a href="../association">Association</a></li>
                 <li><a href="#">Banks</a></li>
                 <li><a href="../companies">Companies</a></li>
-                <li><a href="#">Commerce</a></li>
-                <li><a href="#">Leaders</a></li>
-                <li><a href="#">Regulators</a></li>
-                <li><a href="#">Trade</a></li>
-                <li><a href="#">Technology</a></li>
-                <li><a href="#">Events</a></li>
+                <li><a href="../commerce">Commerce</a></li>
+                <li><a href="../leaders">Leaders</a></li>
+                <li><a href="../regulators">Regulators</a></li>
+                <li><a href="../trade">Trade</a></li>
+                <li><a href="../technology">Technology</a></li>
+                <li><a href="../events">Events</a></li>
             </ul>
             <div class="search-menu" id="search">
                 <i class="fa fa-search" aria-hidden="true"></i>
@@ -34,81 +34,8 @@
         <h2>Banks</h2>
     </header>
 
-    <!-- <section class="t-headline">
-        <div class="t-flex t-row">
-            <p class="t-hl">Today's Headline</p>
-            <a href="#">
-                <div class="t-image">
-                    <img src="../assets/images/headline-img1.jpg" alt="Headline Image">
-                </div>
-                <h1>"ABC Industries Implements Sustainable Practices, Reduces Carbon Footprint by 30%"</h1>
-                <a href="#"><button>Read More</button></a>
-            </a>
-        </div>
-        <div class="t-flex t-column">
-            <p class="t-hl">Today's Headline</p>
-            <a href="#" class="t-column-flex">
-                <h1>"LMN Manufacturing Company to Close Plant Due to Economic Downturn"</h1>
-                <div>
-                    <img src="../assets/images/headline-img1.jpg" alt="">
-                </div>
-            </a>
-            <a href="#" class="t-column-flex">
-                <h1>"LMN Manufacturing Company to Close Plant Due to Economic Downturn"</h1>
-                <div>
-                    <img src="" alt="">
-                </div>
-            </a>
-            <a href="#" class="t-column-flex">
-                <h1>"LMN Manufacturing Company to Close Plant Due to Economic Downturn"</h1>
-                <div>
-                    <img src="" alt="">
-                </div>
-            </a>
-            <a href="#" class="t-column-flex">
-                <h1>"LMN Manufacturing Company to Close Plant Due to Economic Downturn"</h1>
-                <div>
-                    <img src="" alt="">
-                </div>
-            </a>
-            <a href="#" class="t-column-flex">
-                <h1>"LMN Manufacturing Company to Close Plant Due to Economic Downturn"</h1>
-                <div>
-                    <img src="" alt="">
-                </div>
-            </a>
-            <a href="#" class="t-column-flex">
-                <h1>"LMN Manufacturing Company to Close Plant Due to Economic Downturn"</h1>
-                <div>
-                    <img src="" alt="">
-                </div>
-            </a>
-        </div>
-    </section>
-
-
-    <hr> -->
-
-
     <section class="t-feature">
-        <!-- <div class="t-flex t-row">
-            <a href="#">
-                <div class="t-image">
-                    <img src="../assets/images/headline-img1.jpg" alt="Headline Image">
-                </div>
-                <h1>"ABC Industries Implements Sustainable Practices, Reduces Carbon Footprint by 30%"</h1>
-            </a>
-        </div>
-
-        <div class="t-flex t-row">
-            <a href="#">
-                <div class="t-image">
-                    <img src="../assets/images/headline-img1.jpg" alt="Headline Image">
-                </div>
-                <h1>"ABC Industries Implements Sustainable Practices, Reduces Carbon Footprint by 30%"</h1>
-            </a>
-        </div> -->
-
+        
         <?php include "../categories/banks.php" ?>
     </section>
 

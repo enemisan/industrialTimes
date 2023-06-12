@@ -18,12 +18,12 @@
             <ul>
                 <li><a href="../association">Association</a></li>
                 <li><a href="../bank">Banks</a></li>
-                <li><a href="#">Companies</a></li>
+                <li><a href="../companies">Companies</a></li>
                 <li><a href="../commerce">Commerce</a></li>
                 <li><a href="../leaders">Leaders</a></li>
                 <li><a href="../regulators">Regulators</a></li>
                 <li><a href="../trade">Trade</a></li>
-                <li><a href="../technology">Technology</a></li>
+                <li><a href="#">Technology</a></li>
                 <li><a href="../events">Events</a></li>
             </ul>
             <div class="search-menu" id="search">
@@ -31,11 +31,11 @@
             </div>
         </nav>
 
-        <h2>Companies</h2>
+        <h2>Technology</h2>
     </header>
 
     <section class="t-feature">
-        <?php include "../categories/companies.php" ?>
+        <?php include "../categories/technology.php" ?>
     </section>
 
     <footer>

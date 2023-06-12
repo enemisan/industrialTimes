@@ -5,19 +5,22 @@
 
 
 .t-feature {
+    width: 100%;
     padding: var(--main-padding);
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
 }
 
 
 .t-mini-feature {
+    width: 100%;
     padding: var(--main-padding);
     display: flex;
 }
 
 
 .t-flex {
-    width: 50%;
+    width: 100%;
 }
 
 .t-hl {

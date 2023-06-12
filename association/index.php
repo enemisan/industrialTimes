@@ -19,12 +19,12 @@
                 <li><a href="#">Association</a></li>
                 <li><a href="../bank">Banks</a></li>
                 <li><a href="../companies">Companies</a></li>
-                <li><a href="#">Commerce</a></li>
-                <li><a href="#">Leaders</a></li>
-                <li><a href="#">Regulators</a></li>
-                <li><a href="#">Trade</a></li>
-                <li><a href="#">Technology</a></li>
-                <li><a href="#">Events</a></li>
+                <li><a href="../commerce">Commerce</a></li>
+                <li><a href="../leaders">Leaders</a></li>
+                <li><a href="../regulators">Regulators</a></li>
+                <li><a href="../trade">Trade</a></li>
+                <li><a href="../technology">Technology</a></li>
+                <li><a href="../events">Events</a></li>
             </ul>
             <div class="search-menu" id="search">
                 <i class="fa fa-search" aria-hidden="true"></i>
