@@ -10,6 +10,27 @@
     <title>Association</title>
 </head>
 <body>
+    <div class="close">
+        <i class="fa fa-times" aria-hidden="true"></i>
+    </div>
+    <div class="sideNav">
+        <ul>
+            <li><a href="../association/">Association</a></li>
+            <li><a href="../bank">Banks</a></li>
+            <li><a href="../companies">Companies</a></li>
+            <li><a href="./">Commerce</a></li>
+            <li><a href="../leaders">Leaders</a></li>
+            <li><a href="../regulators">Regulators</a></li>
+            <li><a href="../trade">Trade</a></li>
+            <li><a href="../technology">Technology</a></li>
+            <li><a href="../events">Events</a></li>
+        </ul>
+    </div>
+
+    <div class="sideNavCover">
+
+    </div>
+    
     <header>
         <nav>
             <a href="../" class="logo">
@@ -19,13 +40,16 @@
                 <li><a href="../association">Association</a></li>
                 <li><a href="../bank">Banks</a></li>
                 <li><a href="../companies">Companies</a></li>
-                <li><a href="#">Commerce</a></li>
+                <li><a href="./">Commerce</a></li>
                 <li><a href="../leaders">Leaders</a></li>
                 <li><a href="../regulators">Regulators</a></li>
                 <li><a href="../trade">Trade</a></li>
                 <li><a href="../technology">Technology</a></li>
                 <li><a href="../events">Events</a></li>
             </ul>
+            <div class="burger">
+                <i class="fa fa-bars" aria-hidden="true"></i>
+            </div>
             <a href="../search/" class="search-menu" id="search">
                 <i class="fa fa-search" aria-hidden="true"></i>
             </a>
@@ -58,6 +82,7 @@
         </div>
     </footer>
 
+    <script src="../assets/global/global.js"></script>
     <script src="https://kit.fontawesome.com/da98164faa.js" crossorigin="anonymous"></script>
 </body>
 </html>

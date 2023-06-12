@@ -8,31 +8,51 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/global/global.css">
     <link rel="stylesheet" href="assets/global/flex.css">
-    <link rel="stylesheet" media="(max-width:800px) and (min-width:451px)" href="tablet.css">
+    <!-- <link rel="stylesheet" media="(max-width:800px) and (min-width:451px)" href="tablet.css"> -->
     <title>Industrial Times</title>
 </head>
 
 <body>
-    <section class="search-bar" id="search-bar">
-        <input type="text">
-        <input type="button" value="Search">
-    </section>
+    <div class="close">
+        <i class="fa fa-times" aria-hidden="true"></i>
+    </div>
+    <div class="sideNav">
+        <ul>
+            <li><a href="association">Association</a></li>
+            <li><a href="bank">Banks</a></li>
+            <li><a href="companies">Companies</a></li>
+            <li><a href="commerce">Commerce</a></li>
+            <li><a href="leaders">Leaders</a></li>
+            <li><a href="regulators">Regulators</a></li>
+            <li><a href="trade">Trade</a></li>
+            <li><a href="technology">Technology</a></li>
+            <li><a href="events">Events</a></li>
+        </ul>
+    </div>
+
+    <div class="sideNavCover">
+
+    </div>
+
     <header>
         <nav>
             <a href = "./" class="logo">
                 Industrial<span>Times</span>
             </a>
             <ul>
-                <li><a href="association/">Association</a></li>
-                <li><a href="bank/">Banks</a></li>
-                <li><a href="#">Companies</a></li>
-                <li><a href="#">Commerce</a></li>
-                <li><a href="#">Leaders</a></li>
-                <li><a href="#">Regulators</a></li>
-                <li><a href="#">Trade</a></li>
-                <li><a href="#">Technology</a></li>
-                <li><a href="#">Events</a></li>
+                <li><a href="association">Association</a></li>
+                <li><a href="bank">Banks</a></li>
+                <li><a href="companies">Companies</a></li>
+                <li><a href="commerce">Commerce</a></li>
+                <li><a href="leaders">Leaders</a></li>
+                <li><a href="regulators">Regulators</a></li>
+                <li><a href="trade">Trade</a></li>
+                <li><a href="technology">Technology</a></li>
+                <li><a href="events">Events</a></li>
             </ul>
+            <div class="burger">
+                <i class="fa fa-bars" aria-hidden="true"></i>
+            </div>
             <a href="search/" class="search-menu" id="search">
                 <i class="fa fa-search" aria-hidden="true"></i>
             </a>

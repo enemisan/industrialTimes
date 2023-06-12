@@ -10,9 +10,12 @@
     <title>Association</title>
 </head>
 <body>
+    <div class="close">
+        <i class="fa fa-times" aria-hidden="true"></i>
+    </div>
     <div class="sideNav">
         <ul>
-            <li><a href="#">Association</a></li>
+            <li><a href="./">Association</a></li>
             <li><a href="../bank">Banks</a></li>
             <li><a href="../companies">Companies</a></li>
             <li><a href="../commerce">Commerce</a></li>
@@ -25,15 +28,16 @@
     </div>
 
     <div class="sideNavCover">
-        
+
     </div>
+    
     <header>
         <nav>
             <a href="../" class="logo">
                 Industrial<span>Times</span>
             </a>
             <ul>
-                <li><a href="#">Association</a></li>
+                <li><a href="./">Association</a></li>
                 <li><a href="../bank">Banks</a></li>
                 <li><a href="../companies">Companies</a></li>
                 <li><a href="../commerce">Commerce</a></li>
@@ -54,82 +58,7 @@
         <h2>Association</h2>
     </header>
 
-    
-    <!-- <section class="t-headline">
-        <div class="t-flex t-row">
-            <p class="t-hl">Today's Headline</p>
-            <a href="#">
-                <div class="t-image">
-                    <img src="../assets/images/headline-img1.jpg" alt="Headline Image">
-                </div>
-                <h1>"ABC Industries Implements Sustainable Practices, Reduces Carbon Footprint by 30%"</h1>
-                <a href="#"><button>Read More</button></a>
-            </a>
-        </div>
-        <div class="t-flex t-column">
-            <p class="t-hl">Today's Headline</p>
-            <a href="#" class="t-column-flex">
-                <h1>"LMN Manufacturing Company to Close Plant Due to Economic Downturn"</h1>
-                <div>
-                    <img src="../assets/images/headline-img1.jpg" alt="">
-                </div>
-            </a>
-            <a href="#" class="t-column-flex">
-                <h1>"LMN Manufacturing Company to Close Plant Due to Economic Downturn"</h1>
-                <div>
-                    <img src="" alt="">
-                </div>
-            </a>
-            <a href="#" class="t-column-flex">
-                <h1>"LMN Manufacturing Company to Close Plant Due to Economic Downturn"</h1>
-                <div>
-                    <img src="" alt="">
-                </div>
-            </a>
-            <a href="#" class="t-column-flex">
-                <h1>"LMN Manufacturing Company to Close Plant Due to Economic Downturn"</h1>
-                <div>
-                    <img src="" alt="">
-                </div>
-            </a>
-            <a href="#" class="t-column-flex">
-                <h1>"LMN Manufacturing Company to Close Plant Due to Economic Downturn"</h1>
-                <div>
-                    <img src="" alt="">
-                </div>
-            </a>
-            <a href="#" class="t-column-flex">
-                <h1>"LMN Manufacturing Company to Close Plant Due to Economic Downturn"</h1>
-                <div>
-                    <img src="" alt="">
-                </div>
-            </a>
-        </div>
-    </section>
-
-
-    <hr> -->
-
-
     <section class="t-feature">
-        <!-- <div class="t-flex t-row">
-            <a href="#">
-                <div class="t-image">
-                    <img src="../assets/images/headline-img1.jpg" alt="Headline Image">
-                </div>
-                <h1>"ABC Industries Implements Sustainable Practices, Reduces Carbon Footprint by 30%"</h1>
-            </a>
-        </div>
-
-        <div class="t-flex t-row">
-            <a href="#">
-                <div class="t-image">
-                    <img src="../assets/images/headline-img1.jpg" alt="Headline Image">
-                </div>
-                <h1>"ABC Industries Implements Sustainable Practices, Reduces Carbon Footprint by 30%"</h1>
-            </a>
-        </div> -->
-
         <?php include "../categories/association.php" ?>
     </section>
 
@@ -153,6 +82,7 @@
         </div>
     </footer>
 
+    <script src="../assets/global/global.js"></script>
     <script src="https://kit.fontawesome.com/da98164faa.js" crossorigin="anonymous"></script>
 </body>
 </html>

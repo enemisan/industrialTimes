@@ -142,15 +142,46 @@ footer .footer-socials i {
     grid-template-columns: repeat(1, 100%);
     place-items: center;
     position: fixed;
+    z-index: 2000;
     right: 0;
-    z-index: 30000;
     width: 300px;
     height: 100vh;
-    background: black;
+    transform: translateX(500px);
+    visibility: hidden;
+    background: white;
+    transition: all .5s ease;
+}
+
+.sideNav.show {
+    transform: translateX(0);
+    visibility: visible;
+}
+
+.close {
+    cursor: pointer;
+    z-index: 3000;
+    position: fixed;
+    top: 30px;
+    right: 30px;
+    color: black;
+    visibility: hidden;
+}
+
+.close.show {
+    visibility: visible;
 }
 
 .sideNavCover {
-    
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: black;
+    opacity: .9;
+    display: none;
+}
+
+.sideNavCover.show {
+    display: block;
 }
 
 .sideNav ul {
@@ -159,6 +190,10 @@ footer .footer-socials i {
 
 .sideNav ul li {
     padding: 10px 0;
+}
+
+.sideNav ul li a{
+    color: black;
 }
 
 

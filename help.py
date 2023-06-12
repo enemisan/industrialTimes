@@ -1,13 +1,30 @@
 import os
 
 
-folder_path = "association/"
-search_text = """<a href="search/" class="search-menu" id="search">
-                <i class="fa fa-search" aria-hidden="true"></i>
-            </a>"""
-replace_text = """<a href="../search/" class="search-menu" id="search">
-                <i class="fa fa-search" aria-hidden="true"></i>
-            </a>"""
+folder_path = "events/"
+search_text = """<header>"""
+replace_text = """<div class="close">
+        <i class="fa fa-times" aria-hidden="true"></i>
+    </div>
+    <div class="sideNav">
+        <ul>
+            <li><a href="#">Association</a></li>
+            <li><a href="../bank">Banks</a></li>
+            <li><a href="../companies">Companies</a></li>
+            <li><a href="../commerce">Commerce</a></li>
+            <li><a href="../leaders">Leaders</a></li>
+            <li><a href="../regulators">Regulators</a></li>
+            <li><a href="../trade">Trade</a></li>
+            <li><a href="../technology">Technology</a></li>
+            <li><a href="../events">Events</a></li>
+        </ul>
+    </div>
+
+    <div class="sideNavCover">
+
+    </div>
+    
+    <header>"""
 
 # Get all .php files in the folder
 php_files = [file for file in os.listdir(folder_path) if file.endswith(".php")]
