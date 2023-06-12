@@ -331,7 +331,7 @@ function collectCategoryData($conn) {
                 $pageLink = $row['pagelink'];
 
                 $htmlCode .= '<div class="t-flex t-row">
-                    <a href="' . $pageLink . '">
+                    <a href="../' . $pageLink . '">
                         <div class="t-image">
                             <img src="' . $imageSrc . '" alt="' . $title . '">
                         </div>
