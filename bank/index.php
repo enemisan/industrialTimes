@@ -26,9 +26,9 @@
                 <li><a href="../technology">Technology</a></li>
                 <li><a href="../events">Events</a></li>
             </ul>
-            <div class="search-menu" id="search">
+            <a href="search/" class="search-menu" id="search">
                 <i class="fa fa-search" aria-hidden="true"></i>
-            </div>
+            </a>
         </nav>
 
         <h2>Banks</h2>
