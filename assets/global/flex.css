@@ -45,7 +45,9 @@
 }
 
 .t-row .t-image img {
-    width: 150%;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
 }
 
 .t-row h1 {
@@ -101,3 +103,32 @@
     grid-gap: 20px;
 }
 
+
+@media only screen and (max-width: 1100px) {
+    .t-row .t-image {
+        width: 100%;
+        height: 300px;
+        overflow: hidden;
+        margin-bottom: 20px;
+        background: white;
+    }
+    .t-row h1 {
+        font-weight: 700;
+        font-size: 30px;
+        line-height: 40px;
+        margin-bottom: 20px;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .t-feature {
+        width: 100%;
+        padding: var(--main-padding);
+        display: grid;
+        grid-template-columns: repeat(1, 100%);
+    }
+
+    .t-row {
+        padding-right: 0;
+    }
+}

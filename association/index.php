@@ -10,6 +10,23 @@
     <title>Association</title>
 </head>
 <body>
+    <div class="sideNav">
+        <ul>
+            <li><a href="#">Association</a></li>
+            <li><a href="../bank">Banks</a></li>
+            <li><a href="../companies">Companies</a></li>
+            <li><a href="../commerce">Commerce</a></li>
+            <li><a href="../leaders">Leaders</a></li>
+            <li><a href="../regulators">Regulators</a></li>
+            <li><a href="../trade">Trade</a></li>
+            <li><a href="../technology">Technology</a></li>
+            <li><a href="../events">Events</a></li>
+        </ul>
+    </div>
+
+    <div class="sideNavCover">
+        
+    </div>
     <header>
         <nav>
             <a href="../" class="logo">
@@ -26,6 +43,9 @@
                 <li><a href="../technology">Technology</a></li>
                 <li><a href="../events">Events</a></li>
             </ul>
+            <div class="burger">
+                <i class="fa fa-bars" aria-hidden="true"></i>
+            </div>
             <a href="../search/" class="search-menu" id="search">
                 <i class="fa fa-search" aria-hidden="true"></i>
             </a>
@@ -34,6 +54,7 @@
         <h2>Association</h2>
     </header>
 
+    
     <!-- <section class="t-headline">
         <div class="t-flex t-row">
             <p class="t-hl">Today's Headline</p>
